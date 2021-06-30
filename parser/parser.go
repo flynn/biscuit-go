@@ -14,7 +14,7 @@ var (
 )
 
 var BiscuitLexerRules = []stateful.Rule{
-	{Name: "Keyword", Pattern: `rules|caveats`, Action: nil},
+	{Name: "Keyword", Pattern: `rules|checks`, Action: nil},
 	{Name: "Function", Pattern: `prefix|suffix|match`, Action: nil},
 	{Name: "Arrow", Pattern: `<-`, Action: nil},
 	{Name: "Or", Pattern: `\|\|`, Action: nil},
@@ -23,6 +23,7 @@ var BiscuitLexerRules = []stateful.Rule{
 	{Name: "String", Pattern: `\"[^\"]*\"`, Action: nil},
 	{Name: "Variable", Pattern: `\$[a-zA-Z0-9_]+`, Action: nil},
 	{Name: "Int", Pattern: `[0-9]+`, Action: nil},
+	{Name: "Bool", Pattern: `true|false`, Action: nil},
 	{Name: "Symbol", Pattern: `#[a-zA-Z0-9_]+`, Action: nil},
 	{Name: "Ident", Pattern: `[a-zA-Z0-9_]+`, Action: nil},
 	{Name: "Whitespace", Pattern: `[ \t]+`, Action: nil},
@@ -40,20 +41,20 @@ var DefaultParserOptions = []participle.Option{
 type Parser interface {
 	Fact(fact string) (biscuit.Fact, error)
 	Rule(rule string) (biscuit.Rule, error)
-	Caveat(caveat string) (biscuit.Caveat, error)
+	Check(check string) (biscuit.Check, error)
 	Must() MustParser
 }
 
 type MustParser interface {
 	Fact(fact string) biscuit.Fact
 	Rule(rule string) biscuit.Rule
-	Caveat(caveat string) biscuit.Caveat
+	Check(check string) biscuit.Check
 }
 
 type parser struct {
-	factParser   *participle.Parser
-	ruleParser   *participle.Parser
-	caveatParser *participle.Parser
+	factParser  *participle.Parser
+	ruleParser  *participle.Parser
+	checkParser *participle.Parser
 }
 
 var _ Parser = (*parser)(nil)
@@ -66,9 +67,9 @@ var _ MustParser = (*mustParser)(nil)
 
 func New() Parser {
 	return &parser{
-		factParser:   participle.MustBuild(&Predicate{}, DefaultParserOptions...),
-		ruleParser:   participle.MustBuild(&Rule{}, DefaultParserOptions...),
-		caveatParser: participle.MustBuild(&Caveat{}, DefaultParserOptions...),
+		factParser:  participle.MustBuild(&Predicate{}, DefaultParserOptions...),
+		ruleParser:  participle.MustBuild(&Rule{}, DefaultParserOptions...),
+		checkParser: participle.MustBuild(&Check{}, DefaultParserOptions...),
 	}
 }
 
@@ -106,23 +107,23 @@ func (p *parser) Rule(rule string) (biscuit.Rule, error) {
 	return *r, nil
 }
 
-func (p *parser) Caveat(caveat string) (biscuit.Caveat, error) {
-	parsed := &Caveat{}
-	if err := p.caveatParser.ParseString("caveat", caveat, parsed); err != nil {
-		return biscuit.Caveat{}, err
+func (p *parser) Check(check string) (biscuit.Check, error) {
+	parsed := &Check{}
+	if err := p.checkParser.ParseString("check", check, parsed); err != nil {
+		return biscuit.Check{}, err
 	}
 
 	queries := make([]biscuit.Rule, len(parsed.Queries))
 	for i, q := range parsed.Queries {
 		query, err := q.ToBiscuit()
 		if err != nil {
-			return biscuit.Caveat{}, err
+			return biscuit.Check{}, err
 		}
 
 		queries[i] = *query
 	}
 
-	return biscuit.Caveat{
+	return biscuit.Check{
 		Queries: queries,
 	}, nil
 }
@@ -149,8 +150,8 @@ func (m *mustParser) Rule(rule string) biscuit.Rule {
 	return r
 }
 
-func (m *mustParser) Caveat(caveat string) biscuit.Caveat {
-	c, err := m.parser.Caveat(caveat)
+func (m *mustParser) Check(check string) biscuit.Check {
+	c, err := m.parser.Check(check)
 	if err != nil {
 		panic(err)
 	}

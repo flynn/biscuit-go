@@ -3,7 +3,6 @@ package datalog
 import (
 	"crypto/rand"
 	"crypto/sha256"
-	"regexp"
 	"testing"
 	"time"
 
@@ -128,7 +127,11 @@ func TestNumbers(t *testing.T) {
 			{t1, []ID{Variable(1234), hashVar("left")}},
 			{t2, []ID{hashVar("t2_id"), hashVar("right"), Variable(1234)}},
 		},
-		Constraints: []Constraint{{1234, IntegerComparisonChecker{IntegerComparisonLT, 1}}},
+		Expressions: []Expression{{
+			Value{Variable(1234)},
+			Value{Integer(1)},
+			BinaryOp{LessThan{}},
+		}},
 	})
 	expected = &FactSet{
 		{Predicate{join, []ID{abc, aaa}}},
@@ -158,9 +161,13 @@ func TestString(t *testing.T) {
 
 	testSuffix := func(suffix String) *FactSet {
 		return w.QueryRule(Rule{
-			Head:        Predicate{suff, []ID{hashVar("app_id"), Variable(1234)}},
-			Body:        []Predicate{{route, []ID{Variable(0), hashVar("app_id"), Variable(1234)}}},
-			Constraints: []Constraint{{1234, StringComparisonChecker{StringComparisonSuffix, suffix}}},
+			Head: Predicate{suff, []ID{hashVar("app_id"), Variable(1234)}},
+			Body: []Predicate{{route, []ID{Variable(0), hashVar("app_id"), Variable(1234)}}},
+			Expressions: []Expression{{
+				Value{Variable(1234)},
+				Value{String(suffix)},
+				BinaryOp{Suffix{}},
+			}},
 		})
 	}
 
@@ -202,10 +209,15 @@ func TestDate(t *testing.T) {
 	res := w.QueryRule(Rule{
 		Head: Predicate{before, []ID{Variable(1234), hashVar("val")}},
 		Body: []Predicate{{x, []ID{Variable(1234), hashVar("val")}}},
-		Constraints: []Constraint{
-			{1234, DateComparisonChecker{DateComparisonBefore, Date(t2.Unix())}},
-			{1234, DateComparisonChecker{DateComparisonAfter, 0}},
-		},
+		Expressions: []Expression{{
+			Value{Variable(1234)},
+			Value{Date(t2.Unix())},
+			BinaryOp{LessOrEqual{}},
+		}, {
+			Value{Variable(1234)},
+			Value{Date(0)},
+			BinaryOp{GreaterOrEqual{}},
+		}},
 	})
 	expected := &FactSet{{Predicate{before, []ID{Date(t1.Unix()), abc}}}}
 	if !expected.Equal(res) {
@@ -215,10 +227,15 @@ func TestDate(t *testing.T) {
 	res = w.QueryRule(Rule{
 		Head: Predicate{after, []ID{Variable(1234), hashVar("val")}},
 		Body: []Predicate{{x, []ID{Variable(1234), hashVar("val")}}},
-		Constraints: []Constraint{
-			{1234, DateComparisonChecker{DateComparisonAfter, Date(t2.Unix())}},
-			{1234, DateComparisonChecker{DateComparisonAfter, 0}},
-		},
+		Expressions: []Expression{{
+			Value{Variable(1234)},
+			Value{Date(t2.Unix())},
+			BinaryOp{GreaterOrEqual{}},
+		}, {
+			Value{Variable(1234)},
+			Value{Date(0)},
+			BinaryOp{GreaterOrEqual{}},
+		}},
 	})
 	expected = &FactSet{{Predicate{after, []ID{Date(t3.Unix()), def}}}}
 	if !expected.Equal(res) {
@@ -261,9 +278,13 @@ func TestBytes(t *testing.T) {
 	w.AddFact(Fact{Predicate{key, []ID{usr3, Bytes(k3)}}})
 
 	res := w.QueryRule(Rule{
-		Head:        Predicate{keyMatch, []ID{hashVar("usr"), Variable(1)}},
-		Body:        []Predicate{{key, []ID{hashVar("usr"), Variable(1)}}},
-		Constraints: []Constraint{{1, BytesComparisonChecker{BytesComparisonEqual, k1}}},
+		Head: Predicate{keyMatch, []ID{hashVar("usr"), Variable(1)}},
+		Body: []Predicate{{key, []ID{hashVar("usr"), Variable(1)}}},
+		Expressions: []Expression{{
+			Value{Variable(1)},
+			Value{Bytes(k1)},
+			BinaryOp{Equal{}},
+		}},
 	})
 	expected := &FactSet{
 		{Predicate{keyMatch, []ID{usr1, Bytes(k1)}}},
@@ -273,9 +294,13 @@ func TestBytes(t *testing.T) {
 	}
 
 	res = w.QueryRule(Rule{
-		Head:        Predicate{keyMatch, []ID{hashVar("usr"), Variable(1)}},
-		Body:        []Predicate{{key, []ID{hashVar("usr"), Variable(1)}}},
-		Constraints: []Constraint{{1, BytesInChecker{Set: map[string]struct{}{string(k1): {}, string(k3): {}}, Not: false}}},
+		Head: Predicate{keyMatch, []ID{hashVar("usr"), Variable(1)}},
+		Body: []Predicate{{key, []ID{hashVar("usr"), Variable(1)}}},
+		Expressions: []Expression{{
+			Value{Set{Bytes(k1), Bytes(k3)}},
+			Value{Variable(1)},
+			BinaryOp{Contains{}},
+		}},
 	})
 	expected = &FactSet{
 		{Predicate{keyMatch, []ID{usr1, Bytes(k1)}}},
@@ -286,9 +311,14 @@ func TestBytes(t *testing.T) {
 	}
 
 	res = w.QueryRule(Rule{
-		Head:        Predicate{keyMatch, []ID{hashVar("usr"), Variable(1)}},
-		Body:        []Predicate{{key, []ID{hashVar("usr"), Variable(1)}}},
-		Constraints: []Constraint{{1, BytesInChecker{Set: map[string]struct{}{string(k1): {}}, Not: true}}},
+		Head: Predicate{keyMatch, []ID{hashVar("usr"), Variable(1)}},
+		Body: []Predicate{{key, []ID{hashVar("usr"), Variable(1)}}},
+		Expressions: []Expression{{
+			Value{Set{Bytes(k1)}},
+			Value{Variable(1)},
+			BinaryOp{Contains{}},
+			UnaryOp{Negate{}},
+		}},
 	})
 	expected = &FactSet{
 		{Predicate{keyMatch, []ID{usr2, Bytes(k2)}}},
@@ -320,19 +350,19 @@ func TestResource(t *testing.T) {
 	w.AddFact(Fact{Predicate{right, []ID{authority, file2, read}}})
 	w.AddFact(Fact{Predicate{right, []ID{authority, file1, write}}})
 
-	caveat1 := syms.Insert("caveat1")
+	check1 := syms.Insert("check1")
 	res := w.QueryRule(Rule{
-		Head: Predicate{caveat1, []ID{file1}},
+		Head: Predicate{check1, []ID{file1}},
 		Body: []Predicate{{resource, []ID{ambient, file1}}},
 	})
 	if len(*res) > 0 {
 		t.Errorf("unexpected facts: %s", dbg.FactSet(res))
 	}
 
-	caveat2 := syms.Insert("caveat2")
+	check2 := syms.Insert("check2")
 	var0 := Variable(0)
 	r2 := Rule{
-		Head: Predicate{caveat2, []ID{var0}},
+		Head: Predicate{check2, []ID{var0}},
 		Body: []Predicate{
 			{resource, []ID{ambient, var0}},
 			{operation, []ID{ambient, read}},
@@ -343,112 +373,6 @@ func TestResource(t *testing.T) {
 	res = w.QueryRule(r2)
 	if len(*res) > 0 {
 		t.Errorf("unexpected facts: %s", dbg.FactSet(res))
-	}
-}
-
-func TestCheckers(t *testing.T) {
-	tests := []struct {
-		Checker
-		yes []ID
-		no  []ID
-	}{
-		{
-			IntegerComparisonChecker{IntegerComparisonEqual, 1},
-			[]ID{Integer(1)},
-			[]ID{Integer(0), Integer(2), Date(1), String("1"), Symbol(1)},
-		},
-		{
-			IntegerComparisonChecker{IntegerComparisonGT, 1},
-			[]ID{Integer(2), Integer(10)},
-			[]ID{Integer(0), Integer(1), Date(2), String("2"), Symbol(2)},
-		},
-		{
-			IntegerComparisonChecker{IntegerComparisonGTE, 1},
-			[]ID{Integer(1), Integer(2), Integer(10)},
-			[]ID{Integer(0), Integer(-1), Date(1), String("1"), Symbol(1)},
-		},
-		{
-			IntegerComparisonChecker{IntegerComparisonLT, 1},
-			[]ID{Integer(0), Integer(-10)},
-			[]ID{Integer(1), Integer(10), Date(0), String("0"), Symbol(0)},
-		},
-		{
-			IntegerComparisonChecker{IntegerComparisonLTE, 1},
-			[]ID{Integer(1), Integer(0), Integer(-2)},
-			[]ID{Integer(2), Integer(10), Date(1), String("1"), Symbol(1)},
-		},
-		{
-			IntegerInChecker{map[Integer]struct{}{1: {}, 2: {}}, false},
-			[]ID{Integer(1), Integer(2)},
-			[]ID{Integer(3), Integer(10), Date(1), String("1"), Symbol(1)},
-		},
-		{
-			IntegerInChecker{map[Integer]struct{}{1: {}, 2: {}}, true},
-			[]ID{Integer(3), Integer(10)},
-			[]ID{Integer(1), Integer(2), Date(3), String("3"), Symbol(3)},
-		},
-		{
-			StringComparisonChecker{StringComparisonEqual, "123"},
-			[]ID{String("123")},
-			[]ID{String(""), String("1234"), String("5123"), Integer(123), Date(123), Symbol(123)},
-		},
-		{
-			StringComparisonChecker{StringComparisonSuffix, "123"},
-			[]ID{String("123"), String("asdf123")},
-			[]ID{String(""), String("1234"), Integer(5123), Date(5123), Symbol(123)},
-		},
-		{
-			StringComparisonChecker{StringComparisonPrefix, "123"},
-			[]ID{String("1234"), String("123")},
-			[]ID{String(""), String("5123"), Integer(1234), Date(1234), Symbol(1234)},
-		},
-		{
-			StringInChecker{map[String]struct{}{"123": {}, "2": {}}, false},
-			[]ID{String("123"), String("2")},
-			[]ID{String("3"), String(""), String("10"), Date(123), Integer(2), Symbol(2)},
-		},
-		{
-			StringInChecker{map[String]struct{}{"123": {}, "2": {}}, true},
-			[]ID{String("1234"), String("5"), String("")},
-			[]ID{String("123"), String("2"), Date(123), Integer(2), Symbol(2)},
-		},
-		{
-			(*StringRegexpChecker)(regexp.MustCompile("foo")),
-			[]ID{String("bazfoobar"), String("foo")},
-			[]ID{String("foz"), String(""), Date(1), Integer(1), Symbol(1)},
-		},
-		{
-			DateComparisonChecker{DateComparisonBefore, 2},
-			[]ID{Date(0), Date(1), Date(2)},
-			[]ID{Date(3), Date(10), Integer(0), String(""), Symbol(1)},
-		},
-		{
-			DateComparisonChecker{DateComparisonAfter, 2},
-			[]ID{Date(2), Date(3)},
-			[]ID{Date(1), Date(0), Integer(3), String(""), Symbol(3)},
-		},
-		{
-			SymbolInChecker{map[Symbol]struct{}{1: {}, 2: {}}, false},
-			[]ID{Symbol(1), Symbol(2)},
-			[]ID{Symbol(0), Symbol(10), String("1"), Integer(1), Date(1)},
-		},
-		{
-			SymbolInChecker{map[Symbol]struct{}{1: {}, 2: {}}, true},
-			[]ID{Symbol(10), Symbol(3)},
-			[]ID{Symbol(1), Symbol(2), String("3"), Integer(3), Date(3)},
-		},
-	}
-	for _, test := range tests {
-		for _, v := range test.yes {
-			if !test.Check(v) {
-				t.Errorf("unexpected true testing %#v with %#v", test.Checker, v)
-			}
-		}
-		for _, v := range test.no {
-			if test.Check(v) {
-				t.Errorf("unexpected false testing %#v with %#v", test.Checker, v)
-			}
-		}
 	}
 }
 
@@ -505,6 +429,52 @@ func TestSymbolTableClone(t *testing.T) {
 
 	require.Equal(t, &SymbolTable{"a", "b", "c"}, s)
 	require.Equal(t, &SymbolTable{"a", "b", "c", "d", "e"}, s2)
+}
+
+func TestSetEqual(t *testing.T) {
+	testCases := []struct {
+		desc  string
+		s1    Set
+		s2    Set
+		equal bool
+	}{
+		{
+			desc:  "equal with same values in same order",
+			s1:    Set{String("a"), String("b"), String("c")},
+			s2:    Set{String("a"), String("b"), String("c")},
+			equal: true,
+		},
+		{
+			desc:  "equal with same values different order",
+			s1:    Set{String("a"), String("b"), String("c")},
+			s2:    Set{String("b"), String("c"), String("a")},
+			equal: true,
+		},
+		{
+			desc:  "not equal when length mismatch",
+			s1:    Set{String("a"), String("b"), String("c")},
+			s2:    Set{String("a"), String("b")},
+			equal: false,
+		},
+		{
+			desc:  "not equal when length mismatch",
+			s1:    Set{String("a"), String("b"), String("c")},
+			s2:    Set{String("a"), String("b"), String("c"), String("d")},
+			equal: false,
+		},
+		{
+			desc:  "not equal when same length but different values",
+			s1:    Set{String("a"), String("b"), String("c")},
+			s2:    Set{String("a"), String("b"), String("d")},
+			equal: false,
+		},
+	}
+
+	for _, testCase := range testCases {
+		t.Run(testCase.desc, func(t *testing.T) {
+			require.Equal(t, testCase.equal, testCase.s1.Equal(testCase.s2))
+		})
+	}
 }
 
 func TestWorldRunLimits(t *testing.T) {

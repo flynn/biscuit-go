@@ -23,29 +23,32 @@ message Signature {
 message Block {
   uint32 index = 1;
   repeated string symbols = 2;
-  repeated Fact facts = 3;
-  repeated Rule rules = 4;
-  repeated Caveat caveats = 5;
+  repeated FactV0 facts_v0 = 3;
+  repeated RuleV0 rules_v0 = 4;
+  repeated CaveatV0 caveats_v0 = 5;
   string context = 6;
   uint32 version = 7;
+  repeated FactV1 facts_v1 = 8;
+  repeated RuleV1 rules_v1 = 9;
+  repeated CheckV1 checks_v1 = 10;
 }
 
-message Fact { Predicate predicate = 1; }
+message FactV0 { PredicateV0 predicate = 1; }
 
-message Rule {
-  Predicate head = 1;
-  repeated Predicate body = 2;
-  repeated Constraint constraints = 3;
+message RuleV0 {
+  PredicateV0 head = 1;
+  repeated PredicateV0 body = 2;
+  repeated ConstraintV0 constraints = 3;
 }
 
-message Caveat { repeated Rule queries = 1; }
+message CaveatV0 { repeated RuleV0 queries = 1; }
 
-message Predicate {
+message PredicateV0 {
   uint64 name = 1;
-  repeated ID ids = 2;
+  repeated IDV0 ids = 2;
 }
 
-message ID {
+message IDV0 {
   enum Kind {
     SYMBOL = 0;
     VARIABLE = 1;
@@ -64,7 +67,7 @@ message ID {
   bytes bytes = 7;
 }
 
-message Constraint {
+message ConstraintV0 {
   uint32 id = 1;
 
   enum Kind {
@@ -77,14 +80,14 @@ message Constraint {
 
   Kind kind = 2;
 
-  IntConstraint int = 3;
-  StringConstraint str = 4;
-  DateConstraint date = 5;
-  SymbolConstraint symbol = 6;
-  BytesConstraint bytes = 7;
+  IntConstraintV0 int = 3;
+  StringConstraintV0 str = 4;
+  DateConstraintV0 date = 5;
+  SymbolConstraintV0 symbol = 6;
+  BytesConstraintV0 bytes = 7;
 }
 
-message IntConstraint {
+message IntConstraintV0 {
   enum Kind {
     LOWER = 0;
     LARGER = 1;
@@ -106,7 +109,7 @@ message IntConstraint {
   repeated int64 not_in_set = 8 [ packed = true ];
 }
 
-message StringConstraint {
+message StringConstraintV0 {
   enum Kind {
     PREFIX = 0;
     SUFFIX = 1;
@@ -126,7 +129,7 @@ message StringConstraint {
   string regex = 7;
 }
 
-message DateConstraint {
+message DateConstraintV0 {
   enum Kind {
     BEFORE = 0;
     AFTER = 1;
@@ -138,7 +141,7 @@ message DateConstraint {
   uint64 after = 3;
 }
 
-message SymbolConstraint {
+message SymbolConstraintV0 {
   enum Kind {
     IN = 0;
     NOT_IN = 1;
@@ -150,7 +153,7 @@ message SymbolConstraint {
   repeated uint64 not_in_set = 3;
 }
 
-message BytesConstraint {
+message BytesConstraintV0 {
   enum Kind {
     EQUAL = 0;
     IN = 1;
@@ -162,4 +165,97 @@ message BytesConstraint {
   bytes equal = 2;
   repeated bytes in_set = 3;
   repeated bytes not_in_set = 4;
+}
+
+message FactV1 { PredicateV1 predicate = 1; }
+
+message RuleV1 {
+  PredicateV1 head = 1;
+  repeated PredicateV1 body = 2;
+  repeated ExpressionV1 expressions = 3;
+}
+
+message CheckV1 { repeated RuleV1 queries = 1; }
+
+message PredicateV1 {
+  uint64 name = 1;
+  repeated IDV1 ids = 2;
+}
+
+message IDV1 {
+  oneof Content {
+    uint64 symbol = 1;
+    uint32 variable = 2;
+    int64 integer = 3;
+    string str = 4;
+    uint64 date = 5;
+    bytes bytes = 6;
+    bool bool = 7;
+    IDSet set = 8;
+  }
+}
+
+message IDSet { repeated IDV1 set = 1; }
+
+message ExpressionV1 { repeated Op ops = 1; }
+
+message Op {
+  oneof Content {
+    IDV1 value = 1;
+    OpUnary unary = 2;
+    OpBinary binary = 3;
+  }
+}
+
+message OpUnary {
+  enum Kind {
+    Negate = 0;
+    Parens = 1;
+    Length = 2;
+  }
+
+  Kind kind = 1;
+}
+
+message OpBinary {
+  enum Kind {
+    LessThan = 0;
+    GreaterThan = 1;
+    LessOrEqual = 2;
+    GreaterOrEqual = 3;
+    Equal = 4;
+    Contains = 5;
+    Prefix = 6;
+    Suffix = 7;
+    Regex = 8;
+    Add = 9;
+    Sub = 10;
+    Mul = 11;
+    Div = 12;
+    And = 13;
+    Or = 14;
+    Intersection = 15;
+    Union = 16;
+  }
+
+  Kind kind = 1;
+}
+
+message Policy {
+  enum Kind {
+    Allow = 0;
+    Deny = 1;
+  }
+
+  repeated RuleV1 queries = 1;
+  Kind kind = 2;
+}
+
+message VerifierPolicies {
+  repeated string symbols = 1;
+  uint32 version = 2;
+  repeated FactV1 facts = 3;
+  repeated RuleV1 rules = 4;
+  repeated CheckV1 checks = 5;
+  repeated Policy policies = 6;
 }

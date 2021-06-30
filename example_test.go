@@ -77,16 +77,23 @@ func ExampleBiscuit() {
 	}
 
 	blockBuilder := deser.CreateBlock()
-	blockBuilder.AddCaveat(biscuit.Caveat{
+	blockBuilder.AddCheck(biscuit.Check{
 		Queries: []biscuit.Rule{
 			{
 				Head: biscuit.Predicate{
-					Name: "caveat",
-					IDs:  []biscuit.Term{biscuit.String("/a/file1.txt")},
+					Name: "allow_read_only",
+					IDs:  []biscuit.Term{biscuit.Variable("file"), biscuit.Variable("permission")},
 				},
 				Body: []biscuit.Predicate{
-					{Name: "resource", IDs: []biscuit.Term{biscuit.Symbol("ambient"), biscuit.String("/a/file1.txt")}},
-					{Name: "operation", IDs: []biscuit.Term{biscuit.Symbol("ambient"), biscuit.Symbol("read")}},
+					{Name: "resource", IDs: []biscuit.Term{biscuit.SymbolAmbient, biscuit.Variable("file")}},
+					{Name: "operation", IDs: []biscuit.Term{biscuit.SymbolAmbient, biscuit.Variable("permission")}},
+				},
+				Expressions: []biscuit.Expression{
+					{
+						biscuit.Value{Term: biscuit.Set{biscuit.Symbol("read")}},
+						biscuit.Value{Term: biscuit.Variable("permission")},
+						biscuit.BinaryContains,
+					},
 				},
 			},
 		},
@@ -116,16 +123,52 @@ func ExampleBiscuit() {
 		panic(fmt.Errorf("failed to create verifier: %v", err))
 	}
 
-	v1.AddFact(biscuit.Fact{Predicate: biscuit.Predicate{Name: "resource", IDs: []biscuit.Term{biscuit.Symbol("ambient"), biscuit.String("/a/file1.txt")}}})
-	v1.AddFact(biscuit.Fact{Predicate: biscuit.Predicate{Name: "operation", IDs: []biscuit.Term{biscuit.Symbol("ambient"), biscuit.Symbol("read")}}})
-
+	v1.AddFact(biscuit.Fact{Predicate: biscuit.Predicate{
+		Name: "resource", IDs: []biscuit.Term{biscuit.SymbolAmbient, biscuit.String("/a/file1.txt")}},
+	})
+	v1.AddFact(biscuit.Fact{Predicate: biscuit.Predicate{
+		Name: "operation", IDs: []biscuit.Term{biscuit.SymbolAmbient, biscuit.Symbol("read")}},
+	})
+	v1.AddPolicy(biscuit.Policy{Kind: biscuit.PolicyKindAllow, Queries: []biscuit.Rule{
+		{
+			Head: biscuit.Predicate{Name: "allow_file_1"},
+			Body: []biscuit.Predicate{
+				{Name: "resource", IDs: []biscuit.Term{biscuit.SymbolAmbient, biscuit.String("/a/file1.txt")}},
+			},
+		},
+	}})
 	if err := v1.Verify(); err != nil {
-		fmt.Printf("failed to verify token: %v\n", err)
+		fmt.Println(v1.PrintWorld())
+		fmt.Println("forbiden to read /a/file1.txt")
 	} else {
-		fmt.Println("verified token")
+		fmt.Println("allowed to read /a/file1.txt")
 	}
 
-	// Output: Token1 length: 240
-	// Token2 length: 384
-	// verified token
+	v1.Reset()
+
+	v1.AddFact(biscuit.Fact{Predicate: biscuit.Predicate{
+		Name: "resource", IDs: []biscuit.Term{biscuit.SymbolAmbient, biscuit.String("/a/file1.txt")}},
+	})
+	v1.AddFact(biscuit.Fact{Predicate: biscuit.Predicate{
+		Name: "operation", IDs: []biscuit.Term{biscuit.SymbolAmbient, biscuit.Symbol("write")}},
+	})
+	v1.AddPolicy(biscuit.Policy{Kind: biscuit.PolicyKindAllow, Queries: []biscuit.Rule{
+		{
+			Head: biscuit.Predicate{Name: "allow_file_1"},
+			Body: []biscuit.Predicate{
+				{Name: "resource", IDs: []biscuit.Term{biscuit.SymbolAmbient, biscuit.String("/a/file1.txt")}},
+			},
+		},
+	}})
+
+	if err := v1.Verify(); err != nil {
+		fmt.Println("forbidden to write /a/file1.txt")
+	} else {
+		fmt.Println("allowed to write /a/file1.txt")
+	}
+
+	// Output: Token1 length: 242
+	// Token2 length: 415
+	// allowed to read /a/file1.txt
+	// forbidden to write /a/file1.txt
 }

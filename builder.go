@@ -19,7 +19,7 @@ var (
 type Builder interface {
 	AddAuthorityFact(fact Fact) error
 	AddAuthorityRule(rule Rule) error
-	AddAuthorityCaveat(caveat Caveat) error
+	AddAuthorityCheck(check Check) error
 	Build() (*Biscuit, error)
 }
 
@@ -31,7 +31,7 @@ type builder struct {
 	symbols      *datalog.SymbolTable
 	facts        *datalog.FactSet
 	rules        []datalog.Rule
-	caveats      []datalog.Caveat
+	checks       []datalog.Check
 	context      string
 }
 
@@ -97,8 +97,8 @@ func (b *builder) AddAuthorityRule(rule Rule) error {
 	return nil
 }
 
-func (b *builder) AddAuthorityCaveat(caveat Caveat) error {
-	b.caveats = append(b.caveats, caveat.convert(b.symbols))
+func (b *builder) AddAuthorityCheck(check Check) error {
+	b.checks = append(b.checks, check.convert(b.symbols))
 	return nil
 }
 
@@ -108,7 +108,7 @@ func (b *builder) Build() (*Biscuit, error) {
 		symbols: b.symbols.SplitOff(b.symbolsStart),
 		facts:   b.facts,
 		rules:   b.rules,
-		caveats: b.caveats,
+		checks:  b.checks,
 		context: b.context,
 		version: MaxSchemaVersion,
 	})
@@ -199,7 +199,7 @@ func (u *Unmarshaler) Unmarshal(serialized []byte) (*Biscuit, error) {
 type BlockBuilder interface {
 	AddFact(fact Fact) error
 	AddRule(rule Rule) error
-	AddCaveat(caveat Caveat) error
+	AddCheck(check Check) error
 	SetContext(string)
 	Build() *Block
 }
@@ -210,7 +210,7 @@ type blockBuilder struct {
 	symbols      *datalog.SymbolTable
 	facts        *datalog.FactSet
 	rules        []datalog.Rule
-	caveats      []datalog.Caveat
+	checks       []datalog.Check
 	context      string
 }
 
@@ -241,9 +241,9 @@ func (b *blockBuilder) AddRule(rule Rule) error {
 	return nil
 }
 
-func (b *blockBuilder) AddCaveat(caveat Caveat) error {
-	dlCaveat := caveat.convert(b.symbols)
-	b.caveats = append(b.caveats, dlCaveat)
+func (b *blockBuilder) AddCheck(check Check) error {
+	dlCheck := check.convert(b.symbols)
+	b.checks = append(b.checks, dlCheck)
 
 	return nil
 }
@@ -261,15 +261,15 @@ func (b *blockBuilder) Build() *Block {
 	rules := make([]datalog.Rule, len(b.rules))
 	copy(rules, b.rules)
 
-	caveats := make([]datalog.Caveat, len(b.caveats))
-	copy(caveats, b.caveats)
+	checks := make([]datalog.Check, len(b.checks))
+	copy(checks, b.checks)
 
 	return &Block{
 		index:   b.index,
 		symbols: b.symbols.Clone(),
 		facts:   &facts,
 		rules:   rules,
-		caveats: caveats,
+		checks:  checks,
 		context: b.context,
 		version: MaxSchemaVersion,
 	}

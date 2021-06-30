@@ -77,6 +77,27 @@ func TestGrammarPredicate(t *testing.T) {
 				},
 			},
 		},
+		{
+			Input: `right($1, ["hex:41414141", #sym])`,
+			Expected: &Predicate{
+				Name: sptr("right"),
+				IDs: []*Term{
+					{Variable: varptr("1")},
+					{Set: []*Term{{Bytes: hexsptr("41414141")}, {Symbol: symptr("sym")}}},
+				},
+			},
+		},
+		{
+			Input: `right($1, true, false)`,
+			Expected: &Predicate{
+				Name: sptr("right"),
+				IDs: []*Term{
+					{Variable: varptr("1")},
+					{Bool: boolptr(true)},
+					{Bool: boolptr(false)},
+				},
+			},
+		},
 	}
 
 	for _, testCase := range testCases {
@@ -332,17 +353,17 @@ func TestGrammarConstraint(t *testing.T) {
 
 }
 
-func TestGrammarCaveat(t *testing.T) {
-	parser, err := participle.Build(&Caveat{}, DefaultParserOptions...)
+func TestGrammarCheck(t *testing.T) {
+	parser, err := participle.Build(&Check{}, DefaultParserOptions...)
 	require.NoError(t, err)
 
 	testCases := []struct {
 		Input    string
-		Expected *Caveat
+		Expected *Check
 	}{
 		{
 			Input: `[grandparent(#a, #c) <- parent(#a, #b), parent(#b, #c)]`,
-			Expected: &Caveat{[]*Rule{
+			Expected: &Check{[]*Rule{
 				{
 					Head: &Predicate{
 						Name: sptr("grandparent"),
@@ -372,7 +393,7 @@ func TestGrammarCaveat(t *testing.T) {
 		},
 		{
 			Input: `[empty() <- parent(#a, #b), parent(#b, #c)]`,
-			Expected: &Caveat{[]*Rule{
+			Expected: &Check{[]*Rule{
 				{
 					Head: &Predicate{
 						Name: sptr("empty"),
@@ -399,7 +420,7 @@ func TestGrammarCaveat(t *testing.T) {
 		},
 		{
 			Input: `[grandparent(#a, #c) <- parent(#a, #b), parent(#b, #c) || grandparent(#a, #c) <- parent(#a, #b), parent(#b, #c) @ $0 > 42, prefix($1, "test")]`,
-			Expected: &Caveat{[]*Rule{
+			Expected: &Check{[]*Rule{
 				{
 					Head: &Predicate{
 						Name: sptr("grandparent"),
@@ -474,7 +495,7 @@ func TestGrammarCaveat(t *testing.T) {
 
 	for _, testCase := range testCases {
 		t.Run(testCase.Input, func(t *testing.T) {
-			parsed := &Caveat{}
+			parsed := &Check{}
 			err := parser.ParseString("test", testCase.Input, parsed)
 			require.NoError(t, err)
 			require.Equal(t, testCase.Expected, parsed)
@@ -628,4 +649,9 @@ func hexsptr(s string) *HexString {
 func commentptr(s string) *Comment {
 	c := Comment(s)
 	return &c
+}
+
+func boolptr(b bool) *Bool {
+	v := Bool(b)
+	return &v
 }

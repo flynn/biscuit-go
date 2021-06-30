@@ -157,11 +157,11 @@ func (b *Biscuit) Verify(root sig.PublicKey) (Verifier, error) {
 	return NewVerifier(b)
 }
 
-func (b *Biscuit) Caveats() [][]datalog.Caveat {
-	result := make([][]datalog.Caveat, 0, len(b.blocks)+1)
-	result = append(result, b.authority.caveats)
+func (b *Biscuit) Checks() [][]datalog.Check {
+	result := make([][]datalog.Check, 0, len(b.blocks)+1)
+	result = append(result, b.authority.checks)
 	for _, block := range b.blocks {
-		result = append(result, block.caveats)
+		result = append(result, block.checks)
 	}
 	return result
 }
@@ -266,13 +266,13 @@ func (b *Biscuit) checkRootKey(root sig.PublicKey) error {
 func (b *Biscuit) generateWorld(symbols *datalog.SymbolTable) (*datalog.World, error) {
 	world := datalog.NewWorld()
 
-	idAuthority := symbols.Sym("authority")
+	idAuthority := symbols.Sym(string(SymbolAuthority))
 	if idAuthority == nil {
-		return nil, errors.New("biscuit: failed to generate world, missing 'authority' symbol in symbol table")
+		return nil, fmt.Errorf("biscuit: failed to generate world, missing %q symbol in symbol table", string(SymbolAuthority))
 	}
-	idAmbient := symbols.Sym("ambient")
+	idAmbient := symbols.Sym(string(SymbolAmbient))
 	if idAmbient == nil {
-		return nil, errors.New("biscuit: failed to generate world, missing 'ambient' symbol in symbol table")
+		return nil, fmt.Errorf("biscuit: failed to generate world, missing %q symbol in symbol table", string(SymbolAmbient))
 	}
 
 	for _, fact := range *b.authority.facts {
@@ -296,10 +296,12 @@ func (b *Biscuit) generateWorld(symbols *datalog.SymbolTable) (*datalog.World, e
 		}
 
 		for _, rule := range block.rules {
+			// rule head cannot contains authority or ambient symbols
 			if len(rule.Head.IDs) == 0 || rule.Head.IDs[0] == idAuthority || rule.Head.IDs[0] == idAmbient {
 				return nil, ErrInvalidBlockRule
 			}
-			world.AddRule(rule)
+			// and also ensure variables won't be replaced by authority and ambient Symbols at generation
+			world.AddRuleWithForbiddenIDs(rule, idAuthority, idAmbient)
 		}
 	}
 

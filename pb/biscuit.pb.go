@@ -25,20 +25,20 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-type ID_Kind int32
+type IDV0_Kind int32
 
 const (
-	ID_SYMBOL   ID_Kind = 0
-	ID_VARIABLE ID_Kind = 1
-	ID_INTEGER  ID_Kind = 2
-	ID_STR      ID_Kind = 3
-	ID_DATE     ID_Kind = 4
-	ID_BYTES    ID_Kind = 5
+	IDV0_SYMBOL   IDV0_Kind = 0
+	IDV0_VARIABLE IDV0_Kind = 1
+	IDV0_INTEGER  IDV0_Kind = 2
+	IDV0_STR      IDV0_Kind = 3
+	IDV0_DATE     IDV0_Kind = 4
+	IDV0_BYTES    IDV0_Kind = 5
 )
 
-// Enum value maps for ID_Kind.
+// Enum value maps for IDV0_Kind.
 var (
-	ID_Kind_name = map[int32]string{
+	IDV0_Kind_name = map[int32]string{
 		0: "SYMBOL",
 		1: "VARIABLE",
 		2: "INTEGER",
@@ -46,7 +46,7 @@ var (
 		4: "DATE",
 		5: "BYTES",
 	}
-	ID_Kind_value = map[string]int32{
+	IDV0_Kind_value = map[string]int32{
 		"SYMBOL":   0,
 		"VARIABLE": 1,
 		"INTEGER":  2,
@@ -56,53 +56,53 @@ var (
 	}
 )
 
-func (x ID_Kind) Enum() *ID_Kind {
-	p := new(ID_Kind)
+func (x IDV0_Kind) Enum() *IDV0_Kind {
+	p := new(IDV0_Kind)
 	*p = x
 	return p
 }
 
-func (x ID_Kind) String() string {
+func (x IDV0_Kind) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (ID_Kind) Descriptor() protoreflect.EnumDescriptor {
+func (IDV0_Kind) Descriptor() protoreflect.EnumDescriptor {
 	return file_biscuit_proto_enumTypes[0].Descriptor()
 }
 
-func (ID_Kind) Type() protoreflect.EnumType {
+func (IDV0_Kind) Type() protoreflect.EnumType {
 	return &file_biscuit_proto_enumTypes[0]
 }
 
-func (x ID_Kind) Number() protoreflect.EnumNumber {
+func (x IDV0_Kind) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use ID_Kind.Descriptor instead.
-func (ID_Kind) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use IDV0_Kind.Descriptor instead.
+func (IDV0_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{8, 0}
 }
 
-type Constraint_Kind int32
+type ConstraintV0_Kind int32
 
 const (
-	Constraint_INT    Constraint_Kind = 0
-	Constraint_STRING Constraint_Kind = 1
-	Constraint_DATE   Constraint_Kind = 2
-	Constraint_SYMBOL Constraint_Kind = 3
-	Constraint_BYTES  Constraint_Kind = 4
+	ConstraintV0_INT    ConstraintV0_Kind = 0
+	ConstraintV0_STRING ConstraintV0_Kind = 1
+	ConstraintV0_DATE   ConstraintV0_Kind = 2
+	ConstraintV0_SYMBOL ConstraintV0_Kind = 3
+	ConstraintV0_BYTES  ConstraintV0_Kind = 4
 )
 
-// Enum value maps for Constraint_Kind.
+// Enum value maps for ConstraintV0_Kind.
 var (
-	Constraint_Kind_name = map[int32]string{
+	ConstraintV0_Kind_name = map[int32]string{
 		0: "INT",
 		1: "STRING",
 		2: "DATE",
 		3: "SYMBOL",
 		4: "BYTES",
 	}
-	Constraint_Kind_value = map[string]int32{
+	ConstraintV0_Kind_value = map[string]int32{
 		"INT":    0,
 		"STRING": 1,
 		"DATE":   2,
@@ -111,48 +111,48 @@ var (
 	}
 )
 
-func (x Constraint_Kind) Enum() *Constraint_Kind {
-	p := new(Constraint_Kind)
+func (x ConstraintV0_Kind) Enum() *ConstraintV0_Kind {
+	p := new(ConstraintV0_Kind)
 	*p = x
 	return p
 }
 
-func (x Constraint_Kind) String() string {
+func (x ConstraintV0_Kind) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (Constraint_Kind) Descriptor() protoreflect.EnumDescriptor {
+func (ConstraintV0_Kind) Descriptor() protoreflect.EnumDescriptor {
 	return file_biscuit_proto_enumTypes[1].Descriptor()
 }
 
-func (Constraint_Kind) Type() protoreflect.EnumType {
+func (ConstraintV0_Kind) Type() protoreflect.EnumType {
 	return &file_biscuit_proto_enumTypes[1]
 }
 
-func (x Constraint_Kind) Number() protoreflect.EnumNumber {
+func (x ConstraintV0_Kind) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use Constraint_Kind.Descriptor instead.
-func (Constraint_Kind) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use ConstraintV0_Kind.Descriptor instead.
+func (ConstraintV0_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{9, 0}
 }
 
-type IntConstraint_Kind int32
+type IntConstraintV0_Kind int32
 
 const (
-	IntConstraint_LOWER           IntConstraint_Kind = 0
-	IntConstraint_LARGER          IntConstraint_Kind = 1
-	IntConstraint_LOWER_OR_EQUAL  IntConstraint_Kind = 2
-	IntConstraint_LARGER_OR_EQUAL IntConstraint_Kind = 3
-	IntConstraint_EQUAL           IntConstraint_Kind = 4
-	IntConstraint_IN              IntConstraint_Kind = 5
-	IntConstraint_NOT_IN          IntConstraint_Kind = 6
+	IntConstraintV0_LOWER           IntConstraintV0_Kind = 0
+	IntConstraintV0_LARGER          IntConstraintV0_Kind = 1
+	IntConstraintV0_LOWER_OR_EQUAL  IntConstraintV0_Kind = 2
+	IntConstraintV0_LARGER_OR_EQUAL IntConstraintV0_Kind = 3
+	IntConstraintV0_EQUAL           IntConstraintV0_Kind = 4
+	IntConstraintV0_IN              IntConstraintV0_Kind = 5
+	IntConstraintV0_NOT_IN          IntConstraintV0_Kind = 6
 )
 
-// Enum value maps for IntConstraint_Kind.
+// Enum value maps for IntConstraintV0_Kind.
 var (
-	IntConstraint_Kind_name = map[int32]string{
+	IntConstraintV0_Kind_name = map[int32]string{
 		0: "LOWER",
 		1: "LARGER",
 		2: "LOWER_OR_EQUAL",
@@ -161,7 +161,7 @@ var (
 		5: "IN",
 		6: "NOT_IN",
 	}
-	IntConstraint_Kind_value = map[string]int32{
+	IntConstraintV0_Kind_value = map[string]int32{
 		"LOWER":           0,
 		"LARGER":          1,
 		"LOWER_OR_EQUAL":  2,
@@ -172,47 +172,47 @@ var (
 	}
 )
 
-func (x IntConstraint_Kind) Enum() *IntConstraint_Kind {
-	p := new(IntConstraint_Kind)
+func (x IntConstraintV0_Kind) Enum() *IntConstraintV0_Kind {
+	p := new(IntConstraintV0_Kind)
 	*p = x
 	return p
 }
 
-func (x IntConstraint_Kind) String() string {
+func (x IntConstraintV0_Kind) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (IntConstraint_Kind) Descriptor() protoreflect.EnumDescriptor {
+func (IntConstraintV0_Kind) Descriptor() protoreflect.EnumDescriptor {
 	return file_biscuit_proto_enumTypes[2].Descriptor()
 }
 
-func (IntConstraint_Kind) Type() protoreflect.EnumType {
+func (IntConstraintV0_Kind) Type() protoreflect.EnumType {
 	return &file_biscuit_proto_enumTypes[2]
 }
 
-func (x IntConstraint_Kind) Number() protoreflect.EnumNumber {
+func (x IntConstraintV0_Kind) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use IntConstraint_Kind.Descriptor instead.
-func (IntConstraint_Kind) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use IntConstraintV0_Kind.Descriptor instead.
+func (IntConstraintV0_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{10, 0}
 }
 
-type StringConstraint_Kind int32
+type StringConstraintV0_Kind int32
 
 const (
-	StringConstraint_PREFIX StringConstraint_Kind = 0
-	StringConstraint_SUFFIX StringConstraint_Kind = 1
-	StringConstraint_EQUAL  StringConstraint_Kind = 2
-	StringConstraint_IN     StringConstraint_Kind = 3
-	StringConstraint_NOT_IN StringConstraint_Kind = 4
-	StringConstraint_REGEX  StringConstraint_Kind = 5
+	StringConstraintV0_PREFIX StringConstraintV0_Kind = 0
+	StringConstraintV0_SUFFIX StringConstraintV0_Kind = 1
+	StringConstraintV0_EQUAL  StringConstraintV0_Kind = 2
+	StringConstraintV0_IN     StringConstraintV0_Kind = 3
+	StringConstraintV0_NOT_IN StringConstraintV0_Kind = 4
+	StringConstraintV0_REGEX  StringConstraintV0_Kind = 5
 )
 
-// Enum value maps for StringConstraint_Kind.
+// Enum value maps for StringConstraintV0_Kind.
 var (
-	StringConstraint_Kind_name = map[int32]string{
+	StringConstraintV0_Kind_name = map[int32]string{
 		0: "PREFIX",
 		1: "SUFFIX",
 		2: "EQUAL",
@@ -220,7 +220,7 @@ var (
 		4: "NOT_IN",
 		5: "REGEX",
 	}
-	StringConstraint_Kind_value = map[string]int32{
+	StringConstraintV0_Kind_value = map[string]int32{
 		"PREFIX": 0,
 		"SUFFIX": 1,
 		"EQUAL":  2,
@@ -230,172 +230,358 @@ var (
 	}
 )
 
-func (x StringConstraint_Kind) Enum() *StringConstraint_Kind {
-	p := new(StringConstraint_Kind)
+func (x StringConstraintV0_Kind) Enum() *StringConstraintV0_Kind {
+	p := new(StringConstraintV0_Kind)
 	*p = x
 	return p
 }
 
-func (x StringConstraint_Kind) String() string {
+func (x StringConstraintV0_Kind) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (StringConstraint_Kind) Descriptor() protoreflect.EnumDescriptor {
+func (StringConstraintV0_Kind) Descriptor() protoreflect.EnumDescriptor {
 	return file_biscuit_proto_enumTypes[3].Descriptor()
 }
 
-func (StringConstraint_Kind) Type() protoreflect.EnumType {
+func (StringConstraintV0_Kind) Type() protoreflect.EnumType {
 	return &file_biscuit_proto_enumTypes[3]
 }
 
-func (x StringConstraint_Kind) Number() protoreflect.EnumNumber {
+func (x StringConstraintV0_Kind) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use StringConstraint_Kind.Descriptor instead.
-func (StringConstraint_Kind) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use StringConstraintV0_Kind.Descriptor instead.
+func (StringConstraintV0_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{11, 0}
 }
 
-type DateConstraint_Kind int32
+type DateConstraintV0_Kind int32
 
 const (
-	DateConstraint_BEFORE DateConstraint_Kind = 0
-	DateConstraint_AFTER  DateConstraint_Kind = 1
+	DateConstraintV0_BEFORE DateConstraintV0_Kind = 0
+	DateConstraintV0_AFTER  DateConstraintV0_Kind = 1
 )
 
-// Enum value maps for DateConstraint_Kind.
+// Enum value maps for DateConstraintV0_Kind.
 var (
-	DateConstraint_Kind_name = map[int32]string{
+	DateConstraintV0_Kind_name = map[int32]string{
 		0: "BEFORE",
 		1: "AFTER",
 	}
-	DateConstraint_Kind_value = map[string]int32{
+	DateConstraintV0_Kind_value = map[string]int32{
 		"BEFORE": 0,
 		"AFTER":  1,
 	}
 )
 
-func (x DateConstraint_Kind) Enum() *DateConstraint_Kind {
-	p := new(DateConstraint_Kind)
+func (x DateConstraintV0_Kind) Enum() *DateConstraintV0_Kind {
+	p := new(DateConstraintV0_Kind)
 	*p = x
 	return p
 }
 
-func (x DateConstraint_Kind) String() string {
+func (x DateConstraintV0_Kind) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (DateConstraint_Kind) Descriptor() protoreflect.EnumDescriptor {
+func (DateConstraintV0_Kind) Descriptor() protoreflect.EnumDescriptor {
 	return file_biscuit_proto_enumTypes[4].Descriptor()
 }
 
-func (DateConstraint_Kind) Type() protoreflect.EnumType {
+func (DateConstraintV0_Kind) Type() protoreflect.EnumType {
 	return &file_biscuit_proto_enumTypes[4]
 }
 
-func (x DateConstraint_Kind) Number() protoreflect.EnumNumber {
+func (x DateConstraintV0_Kind) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use DateConstraint_Kind.Descriptor instead.
-func (DateConstraint_Kind) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use DateConstraintV0_Kind.Descriptor instead.
+func (DateConstraintV0_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{12, 0}
 }
 
-type SymbolConstraint_Kind int32
+type SymbolConstraintV0_Kind int32
 
 const (
-	SymbolConstraint_IN     SymbolConstraint_Kind = 0
-	SymbolConstraint_NOT_IN SymbolConstraint_Kind = 1
+	SymbolConstraintV0_IN     SymbolConstraintV0_Kind = 0
+	SymbolConstraintV0_NOT_IN SymbolConstraintV0_Kind = 1
 )
 
-// Enum value maps for SymbolConstraint_Kind.
+// Enum value maps for SymbolConstraintV0_Kind.
 var (
-	SymbolConstraint_Kind_name = map[int32]string{
+	SymbolConstraintV0_Kind_name = map[int32]string{
 		0: "IN",
 		1: "NOT_IN",
 	}
-	SymbolConstraint_Kind_value = map[string]int32{
+	SymbolConstraintV0_Kind_value = map[string]int32{
 		"IN":     0,
 		"NOT_IN": 1,
 	}
 )
 
-func (x SymbolConstraint_Kind) Enum() *SymbolConstraint_Kind {
-	p := new(SymbolConstraint_Kind)
+func (x SymbolConstraintV0_Kind) Enum() *SymbolConstraintV0_Kind {
+	p := new(SymbolConstraintV0_Kind)
 	*p = x
 	return p
 }
 
-func (x SymbolConstraint_Kind) String() string {
+func (x SymbolConstraintV0_Kind) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (SymbolConstraint_Kind) Descriptor() protoreflect.EnumDescriptor {
+func (SymbolConstraintV0_Kind) Descriptor() protoreflect.EnumDescriptor {
 	return file_biscuit_proto_enumTypes[5].Descriptor()
 }
 
-func (SymbolConstraint_Kind) Type() protoreflect.EnumType {
+func (SymbolConstraintV0_Kind) Type() protoreflect.EnumType {
 	return &file_biscuit_proto_enumTypes[5]
 }
 
-func (x SymbolConstraint_Kind) Number() protoreflect.EnumNumber {
+func (x SymbolConstraintV0_Kind) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use SymbolConstraint_Kind.Descriptor instead.
-func (SymbolConstraint_Kind) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use SymbolConstraintV0_Kind.Descriptor instead.
+func (SymbolConstraintV0_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{13, 0}
 }
 
-type BytesConstraint_Kind int32
+type BytesConstraintV0_Kind int32
 
 const (
-	BytesConstraint_EQUAL  BytesConstraint_Kind = 0
-	BytesConstraint_IN     BytesConstraint_Kind = 1
-	BytesConstraint_NOT_IN BytesConstraint_Kind = 2
+	BytesConstraintV0_EQUAL  BytesConstraintV0_Kind = 0
+	BytesConstraintV0_IN     BytesConstraintV0_Kind = 1
+	BytesConstraintV0_NOT_IN BytesConstraintV0_Kind = 2
 )
 
-// Enum value maps for BytesConstraint_Kind.
+// Enum value maps for BytesConstraintV0_Kind.
 var (
-	BytesConstraint_Kind_name = map[int32]string{
+	BytesConstraintV0_Kind_name = map[int32]string{
 		0: "EQUAL",
 		1: "IN",
 		2: "NOT_IN",
 	}
-	BytesConstraint_Kind_value = map[string]int32{
+	BytesConstraintV0_Kind_value = map[string]int32{
 		"EQUAL":  0,
 		"IN":     1,
 		"NOT_IN": 2,
 	}
 )
 
-func (x BytesConstraint_Kind) Enum() *BytesConstraint_Kind {
-	p := new(BytesConstraint_Kind)
+func (x BytesConstraintV0_Kind) Enum() *BytesConstraintV0_Kind {
+	p := new(BytesConstraintV0_Kind)
 	*p = x
 	return p
 }
 
-func (x BytesConstraint_Kind) String() string {
+func (x BytesConstraintV0_Kind) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (BytesConstraint_Kind) Descriptor() protoreflect.EnumDescriptor {
+func (BytesConstraintV0_Kind) Descriptor() protoreflect.EnumDescriptor {
 	return file_biscuit_proto_enumTypes[6].Descriptor()
 }
 
-func (BytesConstraint_Kind) Type() protoreflect.EnumType {
+func (BytesConstraintV0_Kind) Type() protoreflect.EnumType {
 	return &file_biscuit_proto_enumTypes[6]
 }
 
-func (x BytesConstraint_Kind) Number() protoreflect.EnumNumber {
+func (x BytesConstraintV0_Kind) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use BytesConstraint_Kind.Descriptor instead.
-func (BytesConstraint_Kind) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use BytesConstraintV0_Kind.Descriptor instead.
+func (BytesConstraintV0_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{14, 0}
+}
+
+type OpUnary_Kind int32
+
+const (
+	OpUnary_Negate OpUnary_Kind = 0
+	OpUnary_Parens OpUnary_Kind = 1
+	OpUnary_Length OpUnary_Kind = 2
+)
+
+// Enum value maps for OpUnary_Kind.
+var (
+	OpUnary_Kind_name = map[int32]string{
+		0: "Negate",
+		1: "Parens",
+		2: "Length",
+	}
+	OpUnary_Kind_value = map[string]int32{
+		"Negate": 0,
+		"Parens": 1,
+		"Length": 2,
+	}
+)
+
+func (x OpUnary_Kind) Enum() *OpUnary_Kind {
+	p := new(OpUnary_Kind)
+	*p = x
+	return p
+}
+
+func (x OpUnary_Kind) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (OpUnary_Kind) Descriptor() protoreflect.EnumDescriptor {
+	return file_biscuit_proto_enumTypes[7].Descriptor()
+}
+
+func (OpUnary_Kind) Type() protoreflect.EnumType {
+	return &file_biscuit_proto_enumTypes[7]
+}
+
+func (x OpUnary_Kind) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use OpUnary_Kind.Descriptor instead.
+func (OpUnary_Kind) EnumDescriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{23, 0}
+}
+
+type OpBinary_Kind int32
+
+const (
+	OpBinary_LessThan       OpBinary_Kind = 0
+	OpBinary_GreaterThan    OpBinary_Kind = 1
+	OpBinary_LessOrEqual    OpBinary_Kind = 2
+	OpBinary_GreaterOrEqual OpBinary_Kind = 3
+	OpBinary_Equal          OpBinary_Kind = 4
+	OpBinary_Contains       OpBinary_Kind = 5
+	OpBinary_Prefix         OpBinary_Kind = 6
+	OpBinary_Suffix         OpBinary_Kind = 7
+	OpBinary_Regex          OpBinary_Kind = 8
+	OpBinary_Add            OpBinary_Kind = 9
+	OpBinary_Sub            OpBinary_Kind = 10
+	OpBinary_Mul            OpBinary_Kind = 11
+	OpBinary_Div            OpBinary_Kind = 12
+	OpBinary_And            OpBinary_Kind = 13
+	OpBinary_Or             OpBinary_Kind = 14
+	OpBinary_Intersection   OpBinary_Kind = 15
+	OpBinary_Union          OpBinary_Kind = 16
+)
+
+// Enum value maps for OpBinary_Kind.
+var (
+	OpBinary_Kind_name = map[int32]string{
+		0:  "LessThan",
+		1:  "GreaterThan",
+		2:  "LessOrEqual",
+		3:  "GreaterOrEqual",
+		4:  "Equal",
+		5:  "Contains",
+		6:  "Prefix",
+		7:  "Suffix",
+		8:  "Regex",
+		9:  "Add",
+		10: "Sub",
+		11: "Mul",
+		12: "Div",
+		13: "And",
+		14: "Or",
+		15: "Intersection",
+		16: "Union",
+	}
+	OpBinary_Kind_value = map[string]int32{
+		"LessThan":       0,
+		"GreaterThan":    1,
+		"LessOrEqual":    2,
+		"GreaterOrEqual": 3,
+		"Equal":          4,
+		"Contains":       5,
+		"Prefix":         6,
+		"Suffix":         7,
+		"Regex":          8,
+		"Add":            9,
+		"Sub":            10,
+		"Mul":            11,
+		"Div":            12,
+		"And":            13,
+		"Or":             14,
+		"Intersection":   15,
+		"Union":          16,
+	}
+)
+
+func (x OpBinary_Kind) Enum() *OpBinary_Kind {
+	p := new(OpBinary_Kind)
+	*p = x
+	return p
+}
+
+func (x OpBinary_Kind) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (OpBinary_Kind) Descriptor() protoreflect.EnumDescriptor {
+	return file_biscuit_proto_enumTypes[8].Descriptor()
+}
+
+func (OpBinary_Kind) Type() protoreflect.EnumType {
+	return &file_biscuit_proto_enumTypes[8]
+}
+
+func (x OpBinary_Kind) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use OpBinary_Kind.Descriptor instead.
+func (OpBinary_Kind) EnumDescriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{24, 0}
+}
+
+type Policy_Kind int32
+
+const (
+	Policy_Allow Policy_Kind = 0
+	Policy_Deny  Policy_Kind = 1
+)
+
+// Enum value maps for Policy_Kind.
+var (
+	Policy_Kind_name = map[int32]string{
+		0: "Allow",
+		1: "Deny",
+	}
+	Policy_Kind_value = map[string]int32{
+		"Allow": 0,
+		"Deny":  1,
+	}
+)
+
+func (x Policy_Kind) Enum() *Policy_Kind {
+	p := new(Policy_Kind)
+	*p = x
+	return p
+}
+
+func (x Policy_Kind) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Policy_Kind) Descriptor() protoreflect.EnumDescriptor {
+	return file_biscuit_proto_enumTypes[9].Descriptor()
+}
+
+func (Policy_Kind) Type() protoreflect.EnumType {
+	return &file_biscuit_proto_enumTypes[9]
+}
+
+func (x Policy_Kind) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Policy_Kind.Descriptor instead.
+func (Policy_Kind) EnumDescriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{25, 0}
 }
 
 type Biscuit struct {
@@ -592,13 +778,16 @@ type Block struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Index   uint32    `protobuf:"varint,1,opt,name=index,proto3" json:"index,omitempty"`
-	Symbols []string  `protobuf:"bytes,2,rep,name=symbols,proto3" json:"symbols,omitempty"`
-	Facts   []*Fact   `protobuf:"bytes,3,rep,name=facts,proto3" json:"facts,omitempty"`
-	Rules   []*Rule   `protobuf:"bytes,4,rep,name=rules,proto3" json:"rules,omitempty"`
-	Caveats []*Caveat `protobuf:"bytes,5,rep,name=caveats,proto3" json:"caveats,omitempty"`
-	Context string    `protobuf:"bytes,6,opt,name=context,proto3" json:"context,omitempty"`
-	Version uint32    `protobuf:"varint,7,opt,name=version,proto3" json:"version,omitempty"`
+	Index     uint32      `protobuf:"varint,1,opt,name=index,proto3" json:"index,omitempty"`
+	Symbols   []string    `protobuf:"bytes,2,rep,name=symbols,proto3" json:"symbols,omitempty"`
+	FactsV0   []*FactV0   `protobuf:"bytes,3,rep,name=facts_v0,json=factsV0,proto3" json:"facts_v0,omitempty"`
+	RulesV0   []*RuleV0   `protobuf:"bytes,4,rep,name=rules_v0,json=rulesV0,proto3" json:"rules_v0,omitempty"`
+	CaveatsV0 []*CaveatV0 `protobuf:"bytes,5,rep,name=caveats_v0,json=caveatsV0,proto3" json:"caveats_v0,omitempty"`
+	Context   string      `protobuf:"bytes,6,opt,name=context,proto3" json:"context,omitempty"`
+	Version   uint32      `protobuf:"varint,7,opt,name=version,proto3" json:"version,omitempty"`
+	FactsV1   []*FactV1   `protobuf:"bytes,8,rep,name=facts_v1,json=factsV1,proto3" json:"facts_v1,omitempty"`
+	RulesV1   []*RuleV1   `protobuf:"bytes,9,rep,name=rules_v1,json=rulesV1,proto3" json:"rules_v1,omitempty"`
+	ChecksV1  []*CheckV1  `protobuf:"bytes,10,rep,name=checks_v1,json=checksV1,proto3" json:"checks_v1,omitempty"`
 }
 
 func (x *Block) Reset() {
@@ -647,23 +836,23 @@ func (x *Block) GetSymbols() []string {
 	return nil
 }
 
-func (x *Block) GetFacts() []*Fact {
+func (x *Block) GetFactsV0() []*FactV0 {
 	if x != nil {
-		return x.Facts
+		return x.FactsV0
 	}
 	return nil
 }
 
-func (x *Block) GetRules() []*Rule {
+func (x *Block) GetRulesV0() []*RuleV0 {
 	if x != nil {
-		return x.Rules
+		return x.RulesV0
 	}
 	return nil
 }
 
-func (x *Block) GetCaveats() []*Caveat {
+func (x *Block) GetCaveatsV0() []*CaveatV0 {
 	if x != nil {
-		return x.Caveats
+		return x.CaveatsV0
 	}
 	return nil
 }
@@ -682,16 +871,37 @@ func (x *Block) GetVersion() uint32 {
 	return 0
 }
 
-type Fact struct {
+func (x *Block) GetFactsV1() []*FactV1 {
+	if x != nil {
+		return x.FactsV1
+	}
+	return nil
+}
+
+func (x *Block) GetRulesV1() []*RuleV1 {
+	if x != nil {
+		return x.RulesV1
+	}
+	return nil
+}
+
+func (x *Block) GetChecksV1() []*CheckV1 {
+	if x != nil {
+		return x.ChecksV1
+	}
+	return nil
+}
+
+type FactV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Predicate *Predicate `protobuf:"bytes,1,opt,name=predicate,proto3" json:"predicate,omitempty"`
+	Predicate *PredicateV0 `protobuf:"bytes,1,opt,name=predicate,proto3" json:"predicate,omitempty"`
 }
 
-func (x *Fact) Reset() {
-	*x = Fact{}
+func (x *FactV0) Reset() {
+	*x = FactV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -699,13 +909,13 @@ func (x *Fact) Reset() {
 	}
 }
 
-func (x *Fact) String() string {
+func (x *FactV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Fact) ProtoMessage() {}
+func (*FactV0) ProtoMessage() {}
 
-func (x *Fact) ProtoReflect() protoreflect.Message {
+func (x *FactV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -717,30 +927,30 @@ func (x *Fact) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Fact.ProtoReflect.Descriptor instead.
-func (*Fact) Descriptor() ([]byte, []int) {
+// Deprecated: Use FactV0.ProtoReflect.Descriptor instead.
+func (*FactV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *Fact) GetPredicate() *Predicate {
+func (x *FactV0) GetPredicate() *PredicateV0 {
 	if x != nil {
 		return x.Predicate
 	}
 	return nil
 }
 
-type Rule struct {
+type RuleV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Head        *Predicate    `protobuf:"bytes,1,opt,name=head,proto3" json:"head,omitempty"`
-	Body        []*Predicate  `protobuf:"bytes,2,rep,name=body,proto3" json:"body,omitempty"`
-	Constraints []*Constraint `protobuf:"bytes,3,rep,name=constraints,proto3" json:"constraints,omitempty"`
+	Head        *PredicateV0    `protobuf:"bytes,1,opt,name=head,proto3" json:"head,omitempty"`
+	Body        []*PredicateV0  `protobuf:"bytes,2,rep,name=body,proto3" json:"body,omitempty"`
+	Constraints []*ConstraintV0 `protobuf:"bytes,3,rep,name=constraints,proto3" json:"constraints,omitempty"`
 }
 
-func (x *Rule) Reset() {
-	*x = Rule{}
+func (x *RuleV0) Reset() {
+	*x = RuleV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -748,13 +958,13 @@ func (x *Rule) Reset() {
 	}
 }
 
-func (x *Rule) String() string {
+func (x *RuleV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Rule) ProtoMessage() {}
+func (*RuleV0) ProtoMessage() {}
 
-func (x *Rule) ProtoReflect() protoreflect.Message {
+func (x *RuleV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -766,42 +976,42 @@ func (x *Rule) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Rule.ProtoReflect.Descriptor instead.
-func (*Rule) Descriptor() ([]byte, []int) {
+// Deprecated: Use RuleV0.ProtoReflect.Descriptor instead.
+func (*RuleV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *Rule) GetHead() *Predicate {
+func (x *RuleV0) GetHead() *PredicateV0 {
 	if x != nil {
 		return x.Head
 	}
 	return nil
 }
 
-func (x *Rule) GetBody() []*Predicate {
+func (x *RuleV0) GetBody() []*PredicateV0 {
 	if x != nil {
 		return x.Body
 	}
 	return nil
 }
 
-func (x *Rule) GetConstraints() []*Constraint {
+func (x *RuleV0) GetConstraints() []*ConstraintV0 {
 	if x != nil {
 		return x.Constraints
 	}
 	return nil
 }
 
-type Caveat struct {
+type CaveatV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Queries []*Rule `protobuf:"bytes,1,rep,name=queries,proto3" json:"queries,omitempty"`
+	Queries []*RuleV0 `protobuf:"bytes,1,rep,name=queries,proto3" json:"queries,omitempty"`
 }
 
-func (x *Caveat) Reset() {
-	*x = Caveat{}
+func (x *CaveatV0) Reset() {
+	*x = CaveatV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -809,13 +1019,13 @@ func (x *Caveat) Reset() {
 	}
 }
 
-func (x *Caveat) String() string {
+func (x *CaveatV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Caveat) ProtoMessage() {}
+func (*CaveatV0) ProtoMessage() {}
 
-func (x *Caveat) ProtoReflect() protoreflect.Message {
+func (x *CaveatV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -827,29 +1037,29 @@ func (x *Caveat) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Caveat.ProtoReflect.Descriptor instead.
-func (*Caveat) Descriptor() ([]byte, []int) {
+// Deprecated: Use CaveatV0.ProtoReflect.Descriptor instead.
+func (*CaveatV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *Caveat) GetQueries() []*Rule {
+func (x *CaveatV0) GetQueries() []*RuleV0 {
 	if x != nil {
 		return x.Queries
 	}
 	return nil
 }
 
-type Predicate struct {
+type PredicateV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name uint64 `protobuf:"varint,1,opt,name=name,proto3" json:"name,omitempty"`
-	Ids  []*ID  `protobuf:"bytes,2,rep,name=ids,proto3" json:"ids,omitempty"`
+	Name uint64  `protobuf:"varint,1,opt,name=name,proto3" json:"name,omitempty"`
+	Ids  []*IDV0 `protobuf:"bytes,2,rep,name=ids,proto3" json:"ids,omitempty"`
 }
 
-func (x *Predicate) Reset() {
-	*x = Predicate{}
+func (x *PredicateV0) Reset() {
+	*x = PredicateV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -857,13 +1067,13 @@ func (x *Predicate) Reset() {
 	}
 }
 
-func (x *Predicate) String() string {
+func (x *PredicateV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Predicate) ProtoMessage() {}
+func (*PredicateV0) ProtoMessage() {}
 
-func (x *Predicate) ProtoReflect() protoreflect.Message {
+func (x *PredicateV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -875,41 +1085,41 @@ func (x *Predicate) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Predicate.ProtoReflect.Descriptor instead.
-func (*Predicate) Descriptor() ([]byte, []int) {
+// Deprecated: Use PredicateV0.ProtoReflect.Descriptor instead.
+func (*PredicateV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *Predicate) GetName() uint64 {
+func (x *PredicateV0) GetName() uint64 {
 	if x != nil {
 		return x.Name
 	}
 	return 0
 }
 
-func (x *Predicate) GetIds() []*ID {
+func (x *PredicateV0) GetIds() []*IDV0 {
 	if x != nil {
 		return x.Ids
 	}
 	return nil
 }
 
-type ID struct {
+type IDV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Kind     ID_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=ID_Kind" json:"kind,omitempty"`
-	Symbol   uint64  `protobuf:"varint,2,opt,name=symbol,proto3" json:"symbol,omitempty"`
-	Variable uint32  `protobuf:"varint,3,opt,name=variable,proto3" json:"variable,omitempty"`
-	Integer  int64   `protobuf:"varint,4,opt,name=integer,proto3" json:"integer,omitempty"`
-	Str      string  `protobuf:"bytes,5,opt,name=str,proto3" json:"str,omitempty"`
-	Date     uint64  `protobuf:"varint,6,opt,name=date,proto3" json:"date,omitempty"`
-	Bytes    []byte  `protobuf:"bytes,7,opt,name=bytes,proto3" json:"bytes,omitempty"`
+	Kind     IDV0_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=IDV0_Kind" json:"kind,omitempty"`
+	Symbol   uint64    `protobuf:"varint,2,opt,name=symbol,proto3" json:"symbol,omitempty"`
+	Variable uint32    `protobuf:"varint,3,opt,name=variable,proto3" json:"variable,omitempty"`
+	Integer  int64     `protobuf:"varint,4,opt,name=integer,proto3" json:"integer,omitempty"`
+	Str      string    `protobuf:"bytes,5,opt,name=str,proto3" json:"str,omitempty"`
+	Date     uint64    `protobuf:"varint,6,opt,name=date,proto3" json:"date,omitempty"`
+	Bytes    []byte    `protobuf:"bytes,7,opt,name=bytes,proto3" json:"bytes,omitempty"`
 }
 
-func (x *ID) Reset() {
-	*x = ID{}
+func (x *IDV0) Reset() {
+	*x = IDV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -917,13 +1127,13 @@ func (x *ID) Reset() {
 	}
 }
 
-func (x *ID) String() string {
+func (x *IDV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ID) ProtoMessage() {}
+func (*IDV0) ProtoMessage() {}
 
-func (x *ID) ProtoReflect() protoreflect.Message {
+func (x *IDV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -935,76 +1145,76 @@ func (x *ID) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ID.ProtoReflect.Descriptor instead.
-func (*ID) Descriptor() ([]byte, []int) {
+// Deprecated: Use IDV0.ProtoReflect.Descriptor instead.
+func (*IDV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *ID) GetKind() ID_Kind {
+func (x *IDV0) GetKind() IDV0_Kind {
 	if x != nil {
 		return x.Kind
 	}
-	return ID_SYMBOL
+	return IDV0_SYMBOL
 }
 
-func (x *ID) GetSymbol() uint64 {
+func (x *IDV0) GetSymbol() uint64 {
 	if x != nil {
 		return x.Symbol
 	}
 	return 0
 }
 
-func (x *ID) GetVariable() uint32 {
+func (x *IDV0) GetVariable() uint32 {
 	if x != nil {
 		return x.Variable
 	}
 	return 0
 }
 
-func (x *ID) GetInteger() int64 {
+func (x *IDV0) GetInteger() int64 {
 	if x != nil {
 		return x.Integer
 	}
 	return 0
 }
 
-func (x *ID) GetStr() string {
+func (x *IDV0) GetStr() string {
 	if x != nil {
 		return x.Str
 	}
 	return ""
 }
 
-func (x *ID) GetDate() uint64 {
+func (x *IDV0) GetDate() uint64 {
 	if x != nil {
 		return x.Date
 	}
 	return 0
 }
 
-func (x *ID) GetBytes() []byte {
+func (x *IDV0) GetBytes() []byte {
 	if x != nil {
 		return x.Bytes
 	}
 	return nil
 }
 
-type Constraint struct {
+type ConstraintV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id     uint32            `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Kind   Constraint_Kind   `protobuf:"varint,2,opt,name=kind,proto3,enum=Constraint_Kind" json:"kind,omitempty"`
-	Int    *IntConstraint    `protobuf:"bytes,3,opt,name=int,proto3" json:"int,omitempty"`
-	Str    *StringConstraint `protobuf:"bytes,4,opt,name=str,proto3" json:"str,omitempty"`
-	Date   *DateConstraint   `protobuf:"bytes,5,opt,name=date,proto3" json:"date,omitempty"`
-	Symbol *SymbolConstraint `protobuf:"bytes,6,opt,name=symbol,proto3" json:"symbol,omitempty"`
-	Bytes  *BytesConstraint  `protobuf:"bytes,7,opt,name=bytes,proto3" json:"bytes,omitempty"`
+	Id     uint32              `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Kind   ConstraintV0_Kind   `protobuf:"varint,2,opt,name=kind,proto3,enum=ConstraintV0_Kind" json:"kind,omitempty"`
+	Int    *IntConstraintV0    `protobuf:"bytes,3,opt,name=int,proto3" json:"int,omitempty"`
+	Str    *StringConstraintV0 `protobuf:"bytes,4,opt,name=str,proto3" json:"str,omitempty"`
+	Date   *DateConstraintV0   `protobuf:"bytes,5,opt,name=date,proto3" json:"date,omitempty"`
+	Symbol *SymbolConstraintV0 `protobuf:"bytes,6,opt,name=symbol,proto3" json:"symbol,omitempty"`
+	Bytes  *BytesConstraintV0  `protobuf:"bytes,7,opt,name=bytes,proto3" json:"bytes,omitempty"`
 }
 
-func (x *Constraint) Reset() {
-	*x = Constraint{}
+func (x *ConstraintV0) Reset() {
+	*x = ConstraintV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1012,13 +1222,13 @@ func (x *Constraint) Reset() {
 	}
 }
 
-func (x *Constraint) String() string {
+func (x *ConstraintV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Constraint) ProtoMessage() {}
+func (*ConstraintV0) ProtoMessage() {}
 
-func (x *Constraint) ProtoReflect() protoreflect.Message {
+func (x *ConstraintV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1030,77 +1240,77 @@ func (x *Constraint) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Constraint.ProtoReflect.Descriptor instead.
-func (*Constraint) Descriptor() ([]byte, []int) {
+// Deprecated: Use ConstraintV0.ProtoReflect.Descriptor instead.
+func (*ConstraintV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *Constraint) GetId() uint32 {
+func (x *ConstraintV0) GetId() uint32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *Constraint) GetKind() Constraint_Kind {
+func (x *ConstraintV0) GetKind() ConstraintV0_Kind {
 	if x != nil {
 		return x.Kind
 	}
-	return Constraint_INT
+	return ConstraintV0_INT
 }
 
-func (x *Constraint) GetInt() *IntConstraint {
+func (x *ConstraintV0) GetInt() *IntConstraintV0 {
 	if x != nil {
 		return x.Int
 	}
 	return nil
 }
 
-func (x *Constraint) GetStr() *StringConstraint {
+func (x *ConstraintV0) GetStr() *StringConstraintV0 {
 	if x != nil {
 		return x.Str
 	}
 	return nil
 }
 
-func (x *Constraint) GetDate() *DateConstraint {
+func (x *ConstraintV0) GetDate() *DateConstraintV0 {
 	if x != nil {
 		return x.Date
 	}
 	return nil
 }
 
-func (x *Constraint) GetSymbol() *SymbolConstraint {
+func (x *ConstraintV0) GetSymbol() *SymbolConstraintV0 {
 	if x != nil {
 		return x.Symbol
 	}
 	return nil
 }
 
-func (x *Constraint) GetBytes() *BytesConstraint {
+func (x *ConstraintV0) GetBytes() *BytesConstraintV0 {
 	if x != nil {
 		return x.Bytes
 	}
 	return nil
 }
 
-type IntConstraint struct {
+type IntConstraintV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Kind          IntConstraint_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=IntConstraint_Kind" json:"kind,omitempty"`
-	Lower         int64              `protobuf:"varint,2,opt,name=lower,proto3" json:"lower,omitempty"`
-	Larger        int64              `protobuf:"varint,3,opt,name=larger,proto3" json:"larger,omitempty"`
-	LowerOrEqual  int64              `protobuf:"varint,4,opt,name=lower_or_equal,json=lowerOrEqual,proto3" json:"lower_or_equal,omitempty"`
-	LargerOrEqual int64              `protobuf:"varint,5,opt,name=larger_or_equal,json=largerOrEqual,proto3" json:"larger_or_equal,omitempty"`
-	Equal         int64              `protobuf:"varint,6,opt,name=equal,proto3" json:"equal,omitempty"`
-	InSet         []int64            `protobuf:"varint,7,rep,packed,name=in_set,json=inSet,proto3" json:"in_set,omitempty"`
-	NotInSet      []int64            `protobuf:"varint,8,rep,packed,name=not_in_set,json=notInSet,proto3" json:"not_in_set,omitempty"`
+	Kind          IntConstraintV0_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=IntConstraintV0_Kind" json:"kind,omitempty"`
+	Lower         int64                `protobuf:"varint,2,opt,name=lower,proto3" json:"lower,omitempty"`
+	Larger        int64                `protobuf:"varint,3,opt,name=larger,proto3" json:"larger,omitempty"`
+	LowerOrEqual  int64                `protobuf:"varint,4,opt,name=lower_or_equal,json=lowerOrEqual,proto3" json:"lower_or_equal,omitempty"`
+	LargerOrEqual int64                `protobuf:"varint,5,opt,name=larger_or_equal,json=largerOrEqual,proto3" json:"larger_or_equal,omitempty"`
+	Equal         int64                `protobuf:"varint,6,opt,name=equal,proto3" json:"equal,omitempty"`
+	InSet         []int64              `protobuf:"varint,7,rep,packed,name=in_set,json=inSet,proto3" json:"in_set,omitempty"`
+	NotInSet      []int64              `protobuf:"varint,8,rep,packed,name=not_in_set,json=notInSet,proto3" json:"not_in_set,omitempty"`
 }
 
-func (x *IntConstraint) Reset() {
-	*x = IntConstraint{}
+func (x *IntConstraintV0) Reset() {
+	*x = IntConstraintV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1108,13 +1318,13 @@ func (x *IntConstraint) Reset() {
 	}
 }
 
-func (x *IntConstraint) String() string {
+func (x *IntConstraintV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*IntConstraint) ProtoMessage() {}
+func (*IntConstraintV0) ProtoMessage() {}
 
-func (x *IntConstraint) ProtoReflect() protoreflect.Message {
+func (x *IntConstraintV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1126,83 +1336,83 @@ func (x *IntConstraint) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use IntConstraint.ProtoReflect.Descriptor instead.
-func (*IntConstraint) Descriptor() ([]byte, []int) {
+// Deprecated: Use IntConstraintV0.ProtoReflect.Descriptor instead.
+func (*IntConstraintV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *IntConstraint) GetKind() IntConstraint_Kind {
+func (x *IntConstraintV0) GetKind() IntConstraintV0_Kind {
 	if x != nil {
 		return x.Kind
 	}
-	return IntConstraint_LOWER
+	return IntConstraintV0_LOWER
 }
 
-func (x *IntConstraint) GetLower() int64 {
+func (x *IntConstraintV0) GetLower() int64 {
 	if x != nil {
 		return x.Lower
 	}
 	return 0
 }
 
-func (x *IntConstraint) GetLarger() int64 {
+func (x *IntConstraintV0) GetLarger() int64 {
 	if x != nil {
 		return x.Larger
 	}
 	return 0
 }
 
-func (x *IntConstraint) GetLowerOrEqual() int64 {
+func (x *IntConstraintV0) GetLowerOrEqual() int64 {
 	if x != nil {
 		return x.LowerOrEqual
 	}
 	return 0
 }
 
-func (x *IntConstraint) GetLargerOrEqual() int64 {
+func (x *IntConstraintV0) GetLargerOrEqual() int64 {
 	if x != nil {
 		return x.LargerOrEqual
 	}
 	return 0
 }
 
-func (x *IntConstraint) GetEqual() int64 {
+func (x *IntConstraintV0) GetEqual() int64 {
 	if x != nil {
 		return x.Equal
 	}
 	return 0
 }
 
-func (x *IntConstraint) GetInSet() []int64 {
+func (x *IntConstraintV0) GetInSet() []int64 {
 	if x != nil {
 		return x.InSet
 	}
 	return nil
 }
 
-func (x *IntConstraint) GetNotInSet() []int64 {
+func (x *IntConstraintV0) GetNotInSet() []int64 {
 	if x != nil {
 		return x.NotInSet
 	}
 	return nil
 }
 
-type StringConstraint struct {
+type StringConstraintV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Kind     StringConstraint_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=StringConstraint_Kind" json:"kind,omitempty"`
-	Prefix   string                `protobuf:"bytes,2,opt,name=prefix,proto3" json:"prefix,omitempty"`
-	Suffix   string                `protobuf:"bytes,3,opt,name=suffix,proto3" json:"suffix,omitempty"`
-	Equal    string                `protobuf:"bytes,4,opt,name=equal,proto3" json:"equal,omitempty"`
-	InSet    []string              `protobuf:"bytes,5,rep,name=in_set,json=inSet,proto3" json:"in_set,omitempty"`
-	NotInSet []string              `protobuf:"bytes,6,rep,name=not_in_set,json=notInSet,proto3" json:"not_in_set,omitempty"`
-	Regex    string                `protobuf:"bytes,7,opt,name=regex,proto3" json:"regex,omitempty"`
+	Kind     StringConstraintV0_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=StringConstraintV0_Kind" json:"kind,omitempty"`
+	Prefix   string                  `protobuf:"bytes,2,opt,name=prefix,proto3" json:"prefix,omitempty"`
+	Suffix   string                  `protobuf:"bytes,3,opt,name=suffix,proto3" json:"suffix,omitempty"`
+	Equal    string                  `protobuf:"bytes,4,opt,name=equal,proto3" json:"equal,omitempty"`
+	InSet    []string                `protobuf:"bytes,5,rep,name=in_set,json=inSet,proto3" json:"in_set,omitempty"`
+	NotInSet []string                `protobuf:"bytes,6,rep,name=not_in_set,json=notInSet,proto3" json:"not_in_set,omitempty"`
+	Regex    string                  `protobuf:"bytes,7,opt,name=regex,proto3" json:"regex,omitempty"`
 }
 
-func (x *StringConstraint) Reset() {
-	*x = StringConstraint{}
+func (x *StringConstraintV0) Reset() {
+	*x = StringConstraintV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1210,13 +1420,13 @@ func (x *StringConstraint) Reset() {
 	}
 }
 
-func (x *StringConstraint) String() string {
+func (x *StringConstraintV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*StringConstraint) ProtoMessage() {}
+func (*StringConstraintV0) ProtoMessage() {}
 
-func (x *StringConstraint) ProtoReflect() protoreflect.Message {
+func (x *StringConstraintV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1228,72 +1438,72 @@ func (x *StringConstraint) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use StringConstraint.ProtoReflect.Descriptor instead.
-func (*StringConstraint) Descriptor() ([]byte, []int) {
+// Deprecated: Use StringConstraintV0.ProtoReflect.Descriptor instead.
+func (*StringConstraintV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *StringConstraint) GetKind() StringConstraint_Kind {
+func (x *StringConstraintV0) GetKind() StringConstraintV0_Kind {
 	if x != nil {
 		return x.Kind
 	}
-	return StringConstraint_PREFIX
+	return StringConstraintV0_PREFIX
 }
 
-func (x *StringConstraint) GetPrefix() string {
+func (x *StringConstraintV0) GetPrefix() string {
 	if x != nil {
 		return x.Prefix
 	}
 	return ""
 }
 
-func (x *StringConstraint) GetSuffix() string {
+func (x *StringConstraintV0) GetSuffix() string {
 	if x != nil {
 		return x.Suffix
 	}
 	return ""
 }
 
-func (x *StringConstraint) GetEqual() string {
+func (x *StringConstraintV0) GetEqual() string {
 	if x != nil {
 		return x.Equal
 	}
 	return ""
 }
 
-func (x *StringConstraint) GetInSet() []string {
+func (x *StringConstraintV0) GetInSet() []string {
 	if x != nil {
 		return x.InSet
 	}
 	return nil
 }
 
-func (x *StringConstraint) GetNotInSet() []string {
+func (x *StringConstraintV0) GetNotInSet() []string {
 	if x != nil {
 		return x.NotInSet
 	}
 	return nil
 }
 
-func (x *StringConstraint) GetRegex() string {
+func (x *StringConstraintV0) GetRegex() string {
 	if x != nil {
 		return x.Regex
 	}
 	return ""
 }
 
-type DateConstraint struct {
+type DateConstraintV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Kind   DateConstraint_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=DateConstraint_Kind" json:"kind,omitempty"`
-	Before uint64              `protobuf:"varint,2,opt,name=before,proto3" json:"before,omitempty"`
-	After  uint64              `protobuf:"varint,3,opt,name=after,proto3" json:"after,omitempty"`
+	Kind   DateConstraintV0_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=DateConstraintV0_Kind" json:"kind,omitempty"`
+	Before uint64                `protobuf:"varint,2,opt,name=before,proto3" json:"before,omitempty"`
+	After  uint64                `protobuf:"varint,3,opt,name=after,proto3" json:"after,omitempty"`
 }
 
-func (x *DateConstraint) Reset() {
-	*x = DateConstraint{}
+func (x *DateConstraintV0) Reset() {
+	*x = DateConstraintV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1301,13 +1511,13 @@ func (x *DateConstraint) Reset() {
 	}
 }
 
-func (x *DateConstraint) String() string {
+func (x *DateConstraintV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DateConstraint) ProtoMessage() {}
+func (*DateConstraintV0) ProtoMessage() {}
 
-func (x *DateConstraint) ProtoReflect() protoreflect.Message {
+func (x *DateConstraintV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1319,44 +1529,44 @@ func (x *DateConstraint) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DateConstraint.ProtoReflect.Descriptor instead.
-func (*DateConstraint) Descriptor() ([]byte, []int) {
+// Deprecated: Use DateConstraintV0.ProtoReflect.Descriptor instead.
+func (*DateConstraintV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *DateConstraint) GetKind() DateConstraint_Kind {
+func (x *DateConstraintV0) GetKind() DateConstraintV0_Kind {
 	if x != nil {
 		return x.Kind
 	}
-	return DateConstraint_BEFORE
+	return DateConstraintV0_BEFORE
 }
 
-func (x *DateConstraint) GetBefore() uint64 {
+func (x *DateConstraintV0) GetBefore() uint64 {
 	if x != nil {
 		return x.Before
 	}
 	return 0
 }
 
-func (x *DateConstraint) GetAfter() uint64 {
+func (x *DateConstraintV0) GetAfter() uint64 {
 	if x != nil {
 		return x.After
 	}
 	return 0
 }
 
-type SymbolConstraint struct {
+type SymbolConstraintV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Kind     SymbolConstraint_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=SymbolConstraint_Kind" json:"kind,omitempty"`
-	InSet    []uint64              `protobuf:"varint,2,rep,packed,name=in_set,json=inSet,proto3" json:"in_set,omitempty"`
-	NotInSet []uint64              `protobuf:"varint,3,rep,packed,name=not_in_set,json=notInSet,proto3" json:"not_in_set,omitempty"`
+	Kind     SymbolConstraintV0_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=SymbolConstraintV0_Kind" json:"kind,omitempty"`
+	InSet    []uint64                `protobuf:"varint,2,rep,packed,name=in_set,json=inSet,proto3" json:"in_set,omitempty"`
+	NotInSet []uint64                `protobuf:"varint,3,rep,packed,name=not_in_set,json=notInSet,proto3" json:"not_in_set,omitempty"`
 }
 
-func (x *SymbolConstraint) Reset() {
-	*x = SymbolConstraint{}
+func (x *SymbolConstraintV0) Reset() {
+	*x = SymbolConstraintV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1364,13 +1574,13 @@ func (x *SymbolConstraint) Reset() {
 	}
 }
 
-func (x *SymbolConstraint) String() string {
+func (x *SymbolConstraintV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SymbolConstraint) ProtoMessage() {}
+func (*SymbolConstraintV0) ProtoMessage() {}
 
-func (x *SymbolConstraint) ProtoReflect() protoreflect.Message {
+func (x *SymbolConstraintV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1382,45 +1592,45 @@ func (x *SymbolConstraint) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SymbolConstraint.ProtoReflect.Descriptor instead.
-func (*SymbolConstraint) Descriptor() ([]byte, []int) {
+// Deprecated: Use SymbolConstraintV0.ProtoReflect.Descriptor instead.
+func (*SymbolConstraintV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{13}
 }
 
-func (x *SymbolConstraint) GetKind() SymbolConstraint_Kind {
+func (x *SymbolConstraintV0) GetKind() SymbolConstraintV0_Kind {
 	if x != nil {
 		return x.Kind
 	}
-	return SymbolConstraint_IN
+	return SymbolConstraintV0_IN
 }
 
-func (x *SymbolConstraint) GetInSet() []uint64 {
+func (x *SymbolConstraintV0) GetInSet() []uint64 {
 	if x != nil {
 		return x.InSet
 	}
 	return nil
 }
 
-func (x *SymbolConstraint) GetNotInSet() []uint64 {
+func (x *SymbolConstraintV0) GetNotInSet() []uint64 {
 	if x != nil {
 		return x.NotInSet
 	}
 	return nil
 }
 
-type BytesConstraint struct {
+type BytesConstraintV0 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Kind     BytesConstraint_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=BytesConstraint_Kind" json:"kind,omitempty"`
-	Equal    []byte               `protobuf:"bytes,2,opt,name=equal,proto3" json:"equal,omitempty"`
-	InSet    [][]byte             `protobuf:"bytes,3,rep,name=in_set,json=inSet,proto3" json:"in_set,omitempty"`
-	NotInSet [][]byte             `protobuf:"bytes,4,rep,name=not_in_set,json=notInSet,proto3" json:"not_in_set,omitempty"`
+	Kind     BytesConstraintV0_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=BytesConstraintV0_Kind" json:"kind,omitempty"`
+	Equal    []byte                 `protobuf:"bytes,2,opt,name=equal,proto3" json:"equal,omitempty"`
+	InSet    [][]byte               `protobuf:"bytes,3,rep,name=in_set,json=inSet,proto3" json:"in_set,omitempty"`
+	NotInSet [][]byte               `protobuf:"bytes,4,rep,name=not_in_set,json=notInSet,proto3" json:"not_in_set,omitempty"`
 }
 
-func (x *BytesConstraint) Reset() {
-	*x = BytesConstraint{}
+func (x *BytesConstraintV0) Reset() {
+	*x = BytesConstraintV0{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_biscuit_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1428,13 +1638,13 @@ func (x *BytesConstraint) Reset() {
 	}
 }
 
-func (x *BytesConstraint) String() string {
+func (x *BytesConstraintV0) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*BytesConstraint) ProtoMessage() {}
+func (*BytesConstraintV0) ProtoMessage() {}
 
-func (x *BytesConstraint) ProtoReflect() protoreflect.Message {
+func (x *BytesConstraintV0) ProtoReflect() protoreflect.Message {
 	mi := &file_biscuit_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1446,35 +1656,835 @@ func (x *BytesConstraint) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use BytesConstraint.ProtoReflect.Descriptor instead.
-func (*BytesConstraint) Descriptor() ([]byte, []int) {
+// Deprecated: Use BytesConstraintV0.ProtoReflect.Descriptor instead.
+func (*BytesConstraintV0) Descriptor() ([]byte, []int) {
 	return file_biscuit_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *BytesConstraint) GetKind() BytesConstraint_Kind {
+func (x *BytesConstraintV0) GetKind() BytesConstraintV0_Kind {
 	if x != nil {
 		return x.Kind
 	}
-	return BytesConstraint_EQUAL
+	return BytesConstraintV0_EQUAL
 }
 
-func (x *BytesConstraint) GetEqual() []byte {
+func (x *BytesConstraintV0) GetEqual() []byte {
 	if x != nil {
 		return x.Equal
 	}
 	return nil
 }
 
-func (x *BytesConstraint) GetInSet() [][]byte {
+func (x *BytesConstraintV0) GetInSet() [][]byte {
 	if x != nil {
 		return x.InSet
 	}
 	return nil
 }
 
-func (x *BytesConstraint) GetNotInSet() [][]byte {
+func (x *BytesConstraintV0) GetNotInSet() [][]byte {
 	if x != nil {
 		return x.NotInSet
+	}
+	return nil
+}
+
+type FactV1 struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Predicate *PredicateV1 `protobuf:"bytes,1,opt,name=predicate,proto3" json:"predicate,omitempty"`
+}
+
+func (x *FactV1) Reset() {
+	*x = FactV1{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *FactV1) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FactV1) ProtoMessage() {}
+
+func (x *FactV1) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FactV1.ProtoReflect.Descriptor instead.
+func (*FactV1) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *FactV1) GetPredicate() *PredicateV1 {
+	if x != nil {
+		return x.Predicate
+	}
+	return nil
+}
+
+type RuleV1 struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Head        *PredicateV1    `protobuf:"bytes,1,opt,name=head,proto3" json:"head,omitempty"`
+	Body        []*PredicateV1  `protobuf:"bytes,2,rep,name=body,proto3" json:"body,omitempty"`
+	Expressions []*ExpressionV1 `protobuf:"bytes,3,rep,name=expressions,proto3" json:"expressions,omitempty"`
+}
+
+func (x *RuleV1) Reset() {
+	*x = RuleV1{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RuleV1) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RuleV1) ProtoMessage() {}
+
+func (x *RuleV1) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RuleV1.ProtoReflect.Descriptor instead.
+func (*RuleV1) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *RuleV1) GetHead() *PredicateV1 {
+	if x != nil {
+		return x.Head
+	}
+	return nil
+}
+
+func (x *RuleV1) GetBody() []*PredicateV1 {
+	if x != nil {
+		return x.Body
+	}
+	return nil
+}
+
+func (x *RuleV1) GetExpressions() []*ExpressionV1 {
+	if x != nil {
+		return x.Expressions
+	}
+	return nil
+}
+
+type CheckV1 struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Queries []*RuleV1 `protobuf:"bytes,1,rep,name=queries,proto3" json:"queries,omitempty"`
+}
+
+func (x *CheckV1) Reset() {
+	*x = CheckV1{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CheckV1) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CheckV1) ProtoMessage() {}
+
+func (x *CheckV1) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CheckV1.ProtoReflect.Descriptor instead.
+func (*CheckV1) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *CheckV1) GetQueries() []*RuleV1 {
+	if x != nil {
+		return x.Queries
+	}
+	return nil
+}
+
+type PredicateV1 struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name uint64  `protobuf:"varint,1,opt,name=name,proto3" json:"name,omitempty"`
+	Ids  []*IDV1 `protobuf:"bytes,2,rep,name=ids,proto3" json:"ids,omitempty"`
+}
+
+func (x *PredicateV1) Reset() {
+	*x = PredicateV1{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PredicateV1) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PredicateV1) ProtoMessage() {}
+
+func (x *PredicateV1) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PredicateV1.ProtoReflect.Descriptor instead.
+func (*PredicateV1) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *PredicateV1) GetName() uint64 {
+	if x != nil {
+		return x.Name
+	}
+	return 0
+}
+
+func (x *PredicateV1) GetIds() []*IDV1 {
+	if x != nil {
+		return x.Ids
+	}
+	return nil
+}
+
+type IDV1 struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Content:
+	//	*IDV1_Symbol
+	//	*IDV1_Variable
+	//	*IDV1_Integer
+	//	*IDV1_Str
+	//	*IDV1_Date
+	//	*IDV1_Bytes
+	//	*IDV1_Bool
+	//	*IDV1_Set
+	Content isIDV1_Content `protobuf_oneof:"Content"`
+}
+
+func (x *IDV1) Reset() {
+	*x = IDV1{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *IDV1) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IDV1) ProtoMessage() {}
+
+func (x *IDV1) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IDV1.ProtoReflect.Descriptor instead.
+func (*IDV1) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{19}
+}
+
+func (m *IDV1) GetContent() isIDV1_Content {
+	if m != nil {
+		return m.Content
+	}
+	return nil
+}
+
+func (x *IDV1) GetSymbol() uint64 {
+	if x, ok := x.GetContent().(*IDV1_Symbol); ok {
+		return x.Symbol
+	}
+	return 0
+}
+
+func (x *IDV1) GetVariable() uint32 {
+	if x, ok := x.GetContent().(*IDV1_Variable); ok {
+		return x.Variable
+	}
+	return 0
+}
+
+func (x *IDV1) GetInteger() int64 {
+	if x, ok := x.GetContent().(*IDV1_Integer); ok {
+		return x.Integer
+	}
+	return 0
+}
+
+func (x *IDV1) GetStr() string {
+	if x, ok := x.GetContent().(*IDV1_Str); ok {
+		return x.Str
+	}
+	return ""
+}
+
+func (x *IDV1) GetDate() uint64 {
+	if x, ok := x.GetContent().(*IDV1_Date); ok {
+		return x.Date
+	}
+	return 0
+}
+
+func (x *IDV1) GetBytes() []byte {
+	if x, ok := x.GetContent().(*IDV1_Bytes); ok {
+		return x.Bytes
+	}
+	return nil
+}
+
+func (x *IDV1) GetBool() bool {
+	if x, ok := x.GetContent().(*IDV1_Bool); ok {
+		return x.Bool
+	}
+	return false
+}
+
+func (x *IDV1) GetSet() *IDSet {
+	if x, ok := x.GetContent().(*IDV1_Set); ok {
+		return x.Set
+	}
+	return nil
+}
+
+type isIDV1_Content interface {
+	isIDV1_Content()
+}
+
+type IDV1_Symbol struct {
+	Symbol uint64 `protobuf:"varint,1,opt,name=symbol,proto3,oneof"`
+}
+
+type IDV1_Variable struct {
+	Variable uint32 `protobuf:"varint,2,opt,name=variable,proto3,oneof"`
+}
+
+type IDV1_Integer struct {
+	Integer int64 `protobuf:"varint,3,opt,name=integer,proto3,oneof"`
+}
+
+type IDV1_Str struct {
+	Str string `protobuf:"bytes,4,opt,name=str,proto3,oneof"`
+}
+
+type IDV1_Date struct {
+	Date uint64 `protobuf:"varint,5,opt,name=date,proto3,oneof"`
+}
+
+type IDV1_Bytes struct {
+	Bytes []byte `protobuf:"bytes,6,opt,name=bytes,proto3,oneof"`
+}
+
+type IDV1_Bool struct {
+	Bool bool `protobuf:"varint,7,opt,name=bool,proto3,oneof"`
+}
+
+type IDV1_Set struct {
+	Set *IDSet `protobuf:"bytes,8,opt,name=set,proto3,oneof"`
+}
+
+func (*IDV1_Symbol) isIDV1_Content() {}
+
+func (*IDV1_Variable) isIDV1_Content() {}
+
+func (*IDV1_Integer) isIDV1_Content() {}
+
+func (*IDV1_Str) isIDV1_Content() {}
+
+func (*IDV1_Date) isIDV1_Content() {}
+
+func (*IDV1_Bytes) isIDV1_Content() {}
+
+func (*IDV1_Bool) isIDV1_Content() {}
+
+func (*IDV1_Set) isIDV1_Content() {}
+
+type IDSet struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Set []*IDV1 `protobuf:"bytes,1,rep,name=set,proto3" json:"set,omitempty"`
+}
+
+func (x *IDSet) Reset() {
+	*x = IDSet{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *IDSet) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IDSet) ProtoMessage() {}
+
+func (x *IDSet) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IDSet.ProtoReflect.Descriptor instead.
+func (*IDSet) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *IDSet) GetSet() []*IDV1 {
+	if x != nil {
+		return x.Set
+	}
+	return nil
+}
+
+type ExpressionV1 struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Ops []*Op `protobuf:"bytes,1,rep,name=ops,proto3" json:"ops,omitempty"`
+}
+
+func (x *ExpressionV1) Reset() {
+	*x = ExpressionV1{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExpressionV1) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExpressionV1) ProtoMessage() {}
+
+func (x *ExpressionV1) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExpressionV1.ProtoReflect.Descriptor instead.
+func (*ExpressionV1) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *ExpressionV1) GetOps() []*Op {
+	if x != nil {
+		return x.Ops
+	}
+	return nil
+}
+
+type Op struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Content:
+	//	*Op_Value
+	//	*Op_Unary
+	//	*Op_Binary
+	Content isOp_Content `protobuf_oneof:"Content"`
+}
+
+func (x *Op) Reset() {
+	*x = Op{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Op) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Op) ProtoMessage() {}
+
+func (x *Op) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Op.ProtoReflect.Descriptor instead.
+func (*Op) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{22}
+}
+
+func (m *Op) GetContent() isOp_Content {
+	if m != nil {
+		return m.Content
+	}
+	return nil
+}
+
+func (x *Op) GetValue() *IDV1 {
+	if x, ok := x.GetContent().(*Op_Value); ok {
+		return x.Value
+	}
+	return nil
+}
+
+func (x *Op) GetUnary() *OpUnary {
+	if x, ok := x.GetContent().(*Op_Unary); ok {
+		return x.Unary
+	}
+	return nil
+}
+
+func (x *Op) GetBinary() *OpBinary {
+	if x, ok := x.GetContent().(*Op_Binary); ok {
+		return x.Binary
+	}
+	return nil
+}
+
+type isOp_Content interface {
+	isOp_Content()
+}
+
+type Op_Value struct {
+	Value *IDV1 `protobuf:"bytes,1,opt,name=value,proto3,oneof"`
+}
+
+type Op_Unary struct {
+	Unary *OpUnary `protobuf:"bytes,2,opt,name=unary,proto3,oneof"`
+}
+
+type Op_Binary struct {
+	Binary *OpBinary `protobuf:"bytes,3,opt,name=binary,proto3,oneof"`
+}
+
+func (*Op_Value) isOp_Content() {}
+
+func (*Op_Unary) isOp_Content() {}
+
+func (*Op_Binary) isOp_Content() {}
+
+type OpUnary struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Kind OpUnary_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=OpUnary_Kind" json:"kind,omitempty"`
+}
+
+func (x *OpUnary) Reset() {
+	*x = OpUnary{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *OpUnary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OpUnary) ProtoMessage() {}
+
+func (x *OpUnary) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OpUnary.ProtoReflect.Descriptor instead.
+func (*OpUnary) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *OpUnary) GetKind() OpUnary_Kind {
+	if x != nil {
+		return x.Kind
+	}
+	return OpUnary_Negate
+}
+
+type OpBinary struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Kind OpBinary_Kind `protobuf:"varint,1,opt,name=kind,proto3,enum=OpBinary_Kind" json:"kind,omitempty"`
+}
+
+func (x *OpBinary) Reset() {
+	*x = OpBinary{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[24]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *OpBinary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OpBinary) ProtoMessage() {}
+
+func (x *OpBinary) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[24]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OpBinary.ProtoReflect.Descriptor instead.
+func (*OpBinary) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *OpBinary) GetKind() OpBinary_Kind {
+	if x != nil {
+		return x.Kind
+	}
+	return OpBinary_LessThan
+}
+
+type Policy struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Queries []*RuleV1   `protobuf:"bytes,1,rep,name=queries,proto3" json:"queries,omitempty"`
+	Kind    Policy_Kind `protobuf:"varint,2,opt,name=kind,proto3,enum=Policy_Kind" json:"kind,omitempty"`
+}
+
+func (x *Policy) Reset() {
+	*x = Policy{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[25]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Policy) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Policy) ProtoMessage() {}
+
+func (x *Policy) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[25]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Policy.ProtoReflect.Descriptor instead.
+func (*Policy) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *Policy) GetQueries() []*RuleV1 {
+	if x != nil {
+		return x.Queries
+	}
+	return nil
+}
+
+func (x *Policy) GetKind() Policy_Kind {
+	if x != nil {
+		return x.Kind
+	}
+	return Policy_Allow
+}
+
+type VerifierPolicies struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Symbols  []string   `protobuf:"bytes,1,rep,name=symbols,proto3" json:"symbols,omitempty"`
+	Version  uint32     `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty"`
+	Facts    []*FactV1  `protobuf:"bytes,3,rep,name=facts,proto3" json:"facts,omitempty"`
+	Rules    []*RuleV1  `protobuf:"bytes,4,rep,name=rules,proto3" json:"rules,omitempty"`
+	Checks   []*CheckV1 `protobuf:"bytes,5,rep,name=checks,proto3" json:"checks,omitempty"`
+	Policies []*Policy  `protobuf:"bytes,6,rep,name=policies,proto3" json:"policies,omitempty"`
+}
+
+func (x *VerifierPolicies) Reset() {
+	*x = VerifierPolicies{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_biscuit_proto_msgTypes[26]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *VerifierPolicies) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifierPolicies) ProtoMessage() {}
+
+func (x *VerifierPolicies) ProtoReflect() protoreflect.Message {
+	mi := &file_biscuit_proto_msgTypes[26]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifierPolicies.ProtoReflect.Descriptor instead.
+func (*VerifierPolicies) Descriptor() ([]byte, []int) {
+	return file_biscuit_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *VerifierPolicies) GetSymbols() []string {
+	if x != nil {
+		return x.Symbols
+	}
+	return nil
+}
+
+func (x *VerifierPolicies) GetVersion() uint32 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+func (x *VerifierPolicies) GetFacts() []*FactV1 {
+	if x != nil {
+		return x.Facts
+	}
+	return nil
+}
+
+func (x *VerifierPolicies) GetRules() []*RuleV1 {
+	if x != nil {
+		return x.Rules
+	}
+	return nil
+}
+
+func (x *VerifierPolicies) GetChecks() []*CheckV1 {
+	if x != nil {
+		return x.Checks
+	}
+	return nil
+}
+
+func (x *VerifierPolicies) GetPolicies() []*Policy {
+	if x != nil {
+		return x.Policies
 	}
 	return nil
 }
@@ -1500,143 +2510,241 @@ var file_biscuit_proto_rawDesc = []byte{
 	0x75, 0x72, 0x65, 0x22, 0x39, 0x0a, 0x09, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65,
 	0x12, 0x1e, 0x0a, 0x0a, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x18, 0x01,
 	0x20, 0x03, 0x28, 0x0c, 0x52, 0x0a, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73,
-	0x12, 0x0c, 0x0a, 0x01, 0x7a, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x01, 0x7a, 0x22, 0xc8,
-	0x01, 0x0a, 0x05, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6e, 0x64, 0x65,
+	0x12, 0x0c, 0x0a, 0x01, 0x7a, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x01, 0x7a, 0x22, 0xcc,
+	0x02, 0x0a, 0x05, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6e, 0x64, 0x65,
 	0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x12, 0x18,
 	0x0a, 0x07, 0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x09, 0x52,
-	0x07, 0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x73, 0x12, 0x1b, 0x0a, 0x05, 0x66, 0x61, 0x63, 0x74,
-	0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e, 0x46, 0x61, 0x63, 0x74, 0x52, 0x05,
-	0x66, 0x61, 0x63, 0x74, 0x73, 0x12, 0x1b, 0x0a, 0x05, 0x72, 0x75, 0x6c, 0x65, 0x73, 0x18, 0x04,
-	0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e, 0x52, 0x75, 0x6c, 0x65, 0x52, 0x05, 0x72, 0x75, 0x6c,
-	0x65, 0x73, 0x12, 0x21, 0x0a, 0x07, 0x63, 0x61, 0x76, 0x65, 0x61, 0x74, 0x73, 0x18, 0x05, 0x20,
-	0x03, 0x28, 0x0b, 0x32, 0x07, 0x2e, 0x43, 0x61, 0x76, 0x65, 0x61, 0x74, 0x52, 0x07, 0x63, 0x61,
-	0x76, 0x65, 0x61, 0x74, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x78, 0x74,
-	0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x78, 0x74, 0x12,
-	0x18, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0d,
-	0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x30, 0x0a, 0x04, 0x46, 0x61, 0x63,
-	0x74, 0x12, 0x28, 0x0a, 0x09, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65,
-	0x52, 0x09, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x22, 0x75, 0x0a, 0x04, 0x52,
-	0x75, 0x6c, 0x65, 0x12, 0x1e, 0x0a, 0x04, 0x68, 0x65, 0x61, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x0a, 0x2e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x52, 0x04, 0x68,
-	0x65, 0x61, 0x64, 0x12, 0x1e, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x02, 0x20, 0x03, 0x28,
-	0x0b, 0x32, 0x0a, 0x2e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x52, 0x04, 0x62,
-	0x6f, 0x64, 0x79, 0x12, 0x2d, 0x0a, 0x0b, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e,
-	0x74, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x43, 0x6f, 0x6e, 0x73, 0x74,
-	0x72, 0x61, 0x69, 0x6e, 0x74, 0x52, 0x0b, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e,
-	0x74, 0x73, 0x22, 0x29, 0x0a, 0x06, 0x43, 0x61, 0x76, 0x65, 0x61, 0x74, 0x12, 0x1f, 0x0a, 0x07,
-	0x71, 0x75, 0x65, 0x72, 0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e,
-	0x52, 0x75, 0x6c, 0x65, 0x52, 0x07, 0x71, 0x75, 0x65, 0x72, 0x69, 0x65, 0x73, 0x22, 0x36, 0x0a,
-	0x09, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61,
-	0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x15,
-	0x0a, 0x03, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x03, 0x2e, 0x49, 0x44,
-	0x52, 0x03, 0x69, 0x64, 0x73, 0x22, 0xf9, 0x01, 0x0a, 0x02, 0x49, 0x44, 0x12, 0x1c, 0x0a, 0x04,
-	0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x08, 0x2e, 0x49, 0x44, 0x2e,
-	0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x79,
-	0x6d, 0x62, 0x6f, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x73, 0x79, 0x6d, 0x62,
-	0x6f, 0x6c, 0x12, 0x1a, 0x0a, 0x08, 0x76, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x18, 0x03,
-	0x20, 0x01, 0x28, 0x0d, 0x52, 0x08, 0x76, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x18,
-	0x0a, 0x07, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52,
-	0x07, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x12, 0x10, 0x0a, 0x03, 0x73, 0x74, 0x72, 0x18,
-	0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x73, 0x74, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61,
-	0x74, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x04, 0x52, 0x04, 0x64, 0x61, 0x74, 0x65, 0x12, 0x14,
-	0x0a, 0x05, 0x62, 0x79, 0x74, 0x65, 0x73, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x05, 0x62,
-	0x79, 0x74, 0x65, 0x73, 0x22, 0x4b, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x0a, 0x0a, 0x06,
-	0x53, 0x59, 0x4d, 0x42, 0x4f, 0x4c, 0x10, 0x00, 0x12, 0x0c, 0x0a, 0x08, 0x56, 0x41, 0x52, 0x49,
-	0x41, 0x42, 0x4c, 0x45, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x49, 0x4e, 0x54, 0x45, 0x47, 0x45,
-	0x52, 0x10, 0x02, 0x12, 0x07, 0x0a, 0x03, 0x53, 0x54, 0x52, 0x10, 0x03, 0x12, 0x08, 0x0a, 0x04,
-	0x44, 0x41, 0x54, 0x45, 0x10, 0x04, 0x12, 0x09, 0x0a, 0x05, 0x42, 0x59, 0x54, 0x45, 0x53, 0x10,
-	0x05, 0x22, 0xbf, 0x02, 0x0a, 0x0a, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74,
-	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64,
-	0x12, 0x24, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x10,
-	0x2e, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x2e, 0x4b, 0x69, 0x6e, 0x64,
-	0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x20, 0x0a, 0x03, 0x69, 0x6e, 0x74, 0x18, 0x03, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x49, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61,
-	0x69, 0x6e, 0x74, 0x52, 0x03, 0x69, 0x6e, 0x74, 0x12, 0x23, 0x0a, 0x03, 0x73, 0x74, 0x72, 0x18,
-	0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x43, 0x6f,
-	0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x52, 0x03, 0x73, 0x74, 0x72, 0x12, 0x23, 0x0a,
-	0x04, 0x64, 0x61, 0x74, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x44, 0x61,
-	0x74, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x52, 0x04, 0x64, 0x61,
-	0x74, 0x65, 0x12, 0x29, 0x0a, 0x06, 0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x18, 0x06, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x11, 0x2e, 0x53, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x43, 0x6f, 0x6e, 0x73, 0x74,
-	0x72, 0x61, 0x69, 0x6e, 0x74, 0x52, 0x06, 0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x12, 0x26, 0x0a,
-	0x05, 0x62, 0x79, 0x74, 0x65, 0x73, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x42,
-	0x79, 0x74, 0x65, 0x73, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x52, 0x05,
-	0x62, 0x79, 0x74, 0x65, 0x73, 0x22, 0x3c, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x07, 0x0a,
-	0x03, 0x49, 0x4e, 0x54, 0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x54, 0x52, 0x49, 0x4e, 0x47,
-	0x10, 0x01, 0x12, 0x08, 0x0a, 0x04, 0x44, 0x41, 0x54, 0x45, 0x10, 0x02, 0x12, 0x0a, 0x0a, 0x06,
-	0x53, 0x59, 0x4d, 0x42, 0x4f, 0x4c, 0x10, 0x03, 0x12, 0x09, 0x0a, 0x05, 0x42, 0x59, 0x54, 0x45,
-	0x53, 0x10, 0x04, 0x22, 0xee, 0x02, 0x0a, 0x0d, 0x49, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x73, 0x74,
-	0x72, 0x61, 0x69, 0x6e, 0x74, 0x12, 0x27, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0e, 0x32, 0x13, 0x2e, 0x49, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61,
-	0x69, 0x6e, 0x74, 0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x14,
-	0x0a, 0x05, 0x6c, 0x6f, 0x77, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c,
-	0x6f, 0x77, 0x65, 0x72, 0x12, 0x16, 0x0a, 0x06, 0x6c, 0x61, 0x72, 0x67, 0x65, 0x72, 0x18, 0x03,
-	0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x6c, 0x61, 0x72, 0x67, 0x65, 0x72, 0x12, 0x24, 0x0a, 0x0e,
-	0x6c, 0x6f, 0x77, 0x65, 0x72, 0x5f, 0x6f, 0x72, 0x5f, 0x65, 0x71, 0x75, 0x61, 0x6c, 0x18, 0x04,
-	0x20, 0x01, 0x28, 0x03, 0x52, 0x0c, 0x6c, 0x6f, 0x77, 0x65, 0x72, 0x4f, 0x72, 0x45, 0x71, 0x75,
-	0x61, 0x6c, 0x12, 0x26, 0x0a, 0x0f, 0x6c, 0x61, 0x72, 0x67, 0x65, 0x72, 0x5f, 0x6f, 0x72, 0x5f,
-	0x65, 0x71, 0x75, 0x61, 0x6c, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0d, 0x6c, 0x61, 0x72,
-	0x67, 0x65, 0x72, 0x4f, 0x72, 0x45, 0x71, 0x75, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x71,
-	0x75, 0x61, 0x6c, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x65, 0x71, 0x75, 0x61, 0x6c,
-	0x12, 0x19, 0x0a, 0x06, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x07, 0x20, 0x03, 0x28, 0x03,
-	0x42, 0x02, 0x10, 0x01, 0x52, 0x05, 0x69, 0x6e, 0x53, 0x65, 0x74, 0x12, 0x20, 0x0a, 0x0a, 0x6e,
-	0x6f, 0x74, 0x5f, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x08, 0x20, 0x03, 0x28, 0x03, 0x42,
-	0x02, 0x10, 0x01, 0x52, 0x08, 0x6e, 0x6f, 0x74, 0x49, 0x6e, 0x53, 0x65, 0x74, 0x22, 0x65, 0x0a,
-	0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x09, 0x0a, 0x05, 0x4c, 0x4f, 0x57, 0x45, 0x52, 0x10, 0x00,
-	0x12, 0x0a, 0x0a, 0x06, 0x4c, 0x41, 0x52, 0x47, 0x45, 0x52, 0x10, 0x01, 0x12, 0x12, 0x0a, 0x0e,
-	0x4c, 0x4f, 0x57, 0x45, 0x52, 0x5f, 0x4f, 0x52, 0x5f, 0x45, 0x51, 0x55, 0x41, 0x4c, 0x10, 0x02,
-	0x12, 0x13, 0x0a, 0x0f, 0x4c, 0x41, 0x52, 0x47, 0x45, 0x52, 0x5f, 0x4f, 0x52, 0x5f, 0x45, 0x51,
-	0x55, 0x41, 0x4c, 0x10, 0x03, 0x12, 0x09, 0x0a, 0x05, 0x45, 0x51, 0x55, 0x41, 0x4c, 0x10, 0x04,
-	0x12, 0x06, 0x0a, 0x02, 0x49, 0x4e, 0x10, 0x05, 0x12, 0x0a, 0x0a, 0x06, 0x4e, 0x4f, 0x54, 0x5f,
-	0x49, 0x4e, 0x10, 0x06, 0x22, 0x99, 0x02, 0x0a, 0x10, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x43,
-	0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x6b, 0x69, 0x6e,
-	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x16, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67,
-	0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52,
-	0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x70, 0x72, 0x65, 0x66, 0x69, 0x78, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x70, 0x72, 0x65, 0x66, 0x69, 0x78, 0x12, 0x16, 0x0a,
-	0x06, 0x73, 0x75, 0x66, 0x66, 0x69, 0x78, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73,
-	0x75, 0x66, 0x66, 0x69, 0x78, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x71, 0x75, 0x61, 0x6c, 0x18, 0x04,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x71, 0x75, 0x61, 0x6c, 0x12, 0x15, 0x0a, 0x06, 0x69,
-	0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x05, 0x20, 0x03, 0x28, 0x09, 0x52, 0x05, 0x69, 0x6e, 0x53,
-	0x65, 0x74, 0x12, 0x1c, 0x0a, 0x0a, 0x6e, 0x6f, 0x74, 0x5f, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74,
-	0x18, 0x06, 0x20, 0x03, 0x28, 0x09, 0x52, 0x08, 0x6e, 0x6f, 0x74, 0x49, 0x6e, 0x53, 0x65, 0x74,
-	0x12, 0x14, 0x0a, 0x05, 0x72, 0x65, 0x67, 0x65, 0x78, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x05, 0x72, 0x65, 0x67, 0x65, 0x78, 0x22, 0x48, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x0a,
-	0x0a, 0x06, 0x50, 0x52, 0x45, 0x46, 0x49, 0x58, 0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x55,
-	0x46, 0x46, 0x49, 0x58, 0x10, 0x01, 0x12, 0x09, 0x0a, 0x05, 0x45, 0x51, 0x55, 0x41, 0x4c, 0x10,
-	0x02, 0x12, 0x06, 0x0a, 0x02, 0x49, 0x4e, 0x10, 0x03, 0x12, 0x0a, 0x0a, 0x06, 0x4e, 0x4f, 0x54,
-	0x5f, 0x49, 0x4e, 0x10, 0x04, 0x12, 0x09, 0x0a, 0x05, 0x52, 0x45, 0x47, 0x45, 0x58, 0x10, 0x05,
-	0x22, 0x87, 0x01, 0x0a, 0x0e, 0x44, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61,
-	0x69, 0x6e, 0x74, 0x12, 0x28, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0e, 0x32, 0x14, 0x2e, 0x44, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69,
-	0x6e, 0x74, 0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x16, 0x0a,
-	0x06, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x62,
-	0x65, 0x66, 0x6f, 0x72, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x61, 0x66, 0x74, 0x65, 0x72, 0x18, 0x03,
-	0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x61, 0x66, 0x74, 0x65, 0x72, 0x22, 0x1d, 0x0a, 0x04, 0x4b,
-	0x69, 0x6e, 0x64, 0x12, 0x0a, 0x0a, 0x06, 0x42, 0x45, 0x46, 0x4f, 0x52, 0x45, 0x10, 0x00, 0x12,
-	0x09, 0x0a, 0x05, 0x41, 0x46, 0x54, 0x45, 0x52, 0x10, 0x01, 0x22, 0x8f, 0x01, 0x0a, 0x10, 0x53,
-	0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x12,
-	0x2a, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x16, 0x2e,
-	0x53, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74,
-	0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x15, 0x0a, 0x06, 0x69,
-	0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x03, 0x28, 0x04, 0x52, 0x05, 0x69, 0x6e, 0x53,
-	0x65, 0x74, 0x12, 0x1c, 0x0a, 0x0a, 0x6e, 0x6f, 0x74, 0x5f, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74,
-	0x18, 0x03, 0x20, 0x03, 0x28, 0x04, 0x52, 0x08, 0x6e, 0x6f, 0x74, 0x49, 0x6e, 0x53, 0x65, 0x74,
-	0x22, 0x1a, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x06, 0x0a, 0x02, 0x49, 0x4e, 0x10, 0x00,
-	0x12, 0x0a, 0x0a, 0x06, 0x4e, 0x4f, 0x54, 0x5f, 0x49, 0x4e, 0x10, 0x01, 0x22, 0xae, 0x01, 0x0a,
-	0x0f, 0x42, 0x79, 0x74, 0x65, 0x73, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74,
-	0x12, 0x29, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x15,
-	0x2e, 0x42, 0x79, 0x74, 0x65, 0x73, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74,
-	0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x65,
-	0x71, 0x75, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x05, 0x65, 0x71, 0x75, 0x61,
-	0x6c, 0x12, 0x15, 0x0a, 0x06, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x03, 0x20, 0x03, 0x28,
-	0x0c, 0x52, 0x05, 0x69, 0x6e, 0x53, 0x65, 0x74, 0x12, 0x1c, 0x0a, 0x0a, 0x6e, 0x6f, 0x74, 0x5f,
-	0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0c, 0x52, 0x08, 0x6e, 0x6f,
-	0x74, 0x49, 0x6e, 0x53, 0x65, 0x74, 0x22, 0x25, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x09,
-	0x0a, 0x05, 0x45, 0x51, 0x55, 0x41, 0x4c, 0x10, 0x00, 0x12, 0x06, 0x0a, 0x02, 0x49, 0x4e, 0x10,
-	0x01, 0x12, 0x0a, 0x0a, 0x06, 0x4e, 0x4f, 0x54, 0x5f, 0x49, 0x4e, 0x10, 0x02, 0x42, 0x06, 0x5a,
-	0x04, 0x2e, 0x3b, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x07, 0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x73, 0x12, 0x22, 0x0a, 0x08, 0x66, 0x61, 0x63, 0x74,
+	0x73, 0x5f, 0x76, 0x30, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x07, 0x2e, 0x46, 0x61, 0x63,
+	0x74, 0x56, 0x30, 0x52, 0x07, 0x66, 0x61, 0x63, 0x74, 0x73, 0x56, 0x30, 0x12, 0x22, 0x0a, 0x08,
+	0x72, 0x75, 0x6c, 0x65, 0x73, 0x5f, 0x76, 0x30, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x07,
+	0x2e, 0x52, 0x75, 0x6c, 0x65, 0x56, 0x30, 0x52, 0x07, 0x72, 0x75, 0x6c, 0x65, 0x73, 0x56, 0x30,
+	0x12, 0x28, 0x0a, 0x0a, 0x63, 0x61, 0x76, 0x65, 0x61, 0x74, 0x73, 0x5f, 0x76, 0x30, 0x18, 0x05,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x09, 0x2e, 0x43, 0x61, 0x76, 0x65, 0x61, 0x74, 0x56, 0x30, 0x52,
+	0x09, 0x63, 0x61, 0x76, 0x65, 0x61, 0x74, 0x73, 0x56, 0x30, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f,
+	0x6e, 0x74, 0x65, 0x78, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6e,
+	0x74, 0x65, 0x78, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18,
+	0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x22,
+	0x0a, 0x08, 0x66, 0x61, 0x63, 0x74, 0x73, 0x5f, 0x76, 0x31, 0x18, 0x08, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x07, 0x2e, 0x46, 0x61, 0x63, 0x74, 0x56, 0x31, 0x52, 0x07, 0x66, 0x61, 0x63, 0x74, 0x73,
+	0x56, 0x31, 0x12, 0x22, 0x0a, 0x08, 0x72, 0x75, 0x6c, 0x65, 0x73, 0x5f, 0x76, 0x31, 0x18, 0x09,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x07, 0x2e, 0x52, 0x75, 0x6c, 0x65, 0x56, 0x31, 0x52, 0x07, 0x72,
+	0x75, 0x6c, 0x65, 0x73, 0x56, 0x31, 0x12, 0x25, 0x0a, 0x09, 0x63, 0x68, 0x65, 0x63, 0x6b, 0x73,
+	0x5f, 0x76, 0x31, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x08, 0x2e, 0x43, 0x68, 0x65, 0x63,
+	0x6b, 0x56, 0x31, 0x52, 0x08, 0x63, 0x68, 0x65, 0x63, 0x6b, 0x73, 0x56, 0x31, 0x22, 0x34, 0x0a,
+	0x06, 0x46, 0x61, 0x63, 0x74, 0x56, 0x30, 0x12, 0x2a, 0x0a, 0x09, 0x70, 0x72, 0x65, 0x64, 0x69,
+	0x63, 0x61, 0x74, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x50, 0x72, 0x65,
+	0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x56, 0x30, 0x52, 0x09, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63,
+	0x61, 0x74, 0x65, 0x22, 0x7d, 0x0a, 0x06, 0x52, 0x75, 0x6c, 0x65, 0x56, 0x30, 0x12, 0x20, 0x0a,
+	0x04, 0x68, 0x65, 0x61, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x50, 0x72,
+	0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x56, 0x30, 0x52, 0x04, 0x68, 0x65, 0x61, 0x64, 0x12,
+	0x20, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0c, 0x2e,
+	0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x56, 0x30, 0x52, 0x04, 0x62, 0x6f, 0x64,
+	0x79, 0x12, 0x2f, 0x0a, 0x0b, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x73,
+	0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61,
+	0x69, 0x6e, 0x74, 0x56, 0x30, 0x52, 0x0b, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e,
+	0x74, 0x73, 0x22, 0x2d, 0x0a, 0x08, 0x43, 0x61, 0x76, 0x65, 0x61, 0x74, 0x56, 0x30, 0x12, 0x21,
+	0x0a, 0x07, 0x71, 0x75, 0x65, 0x72, 0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x07, 0x2e, 0x52, 0x75, 0x6c, 0x65, 0x56, 0x30, 0x52, 0x07, 0x71, 0x75, 0x65, 0x72, 0x69, 0x65,
+	0x73, 0x22, 0x3a, 0x0a, 0x0b, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x56, 0x30,
+	0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x04,
+	0x6e, 0x61, 0x6d, 0x65, 0x12, 0x17, 0x0a, 0x03, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x05, 0x2e, 0x49, 0x44, 0x56, 0x30, 0x52, 0x03, 0x69, 0x64, 0x73, 0x22, 0xfd, 0x01,
+	0x0a, 0x04, 0x49, 0x44, 0x56, 0x30, 0x12, 0x1e, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0e, 0x32, 0x0a, 0x2e, 0x49, 0x44, 0x56, 0x30, 0x2e, 0x4b, 0x69, 0x6e, 0x64,
+	0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x12, 0x1a,
+	0x0a, 0x08, 0x76, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0d,
+	0x52, 0x08, 0x76, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x69, 0x6e, 0x74,
+	0x65, 0x67, 0x65, 0x72, 0x12, 0x10, 0x0a, 0x03, 0x73, 0x74, 0x72, 0x18, 0x05, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x03, 0x73, 0x74, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x65, 0x18, 0x06,
+	0x20, 0x01, 0x28, 0x04, 0x52, 0x04, 0x64, 0x61, 0x74, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x62, 0x79,
+	0x74, 0x65, 0x73, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x05, 0x62, 0x79, 0x74, 0x65, 0x73,
+	0x22, 0x4b, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x59, 0x4d, 0x42,
+	0x4f, 0x4c, 0x10, 0x00, 0x12, 0x0c, 0x0a, 0x08, 0x56, 0x41, 0x52, 0x49, 0x41, 0x42, 0x4c, 0x45,
+	0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x49, 0x4e, 0x54, 0x45, 0x47, 0x45, 0x52, 0x10, 0x02, 0x12,
+	0x07, 0x0a, 0x03, 0x53, 0x54, 0x52, 0x10, 0x03, 0x12, 0x08, 0x0a, 0x04, 0x44, 0x41, 0x54, 0x45,
+	0x10, 0x04, 0x12, 0x09, 0x0a, 0x05, 0x42, 0x59, 0x54, 0x45, 0x53, 0x10, 0x05, 0x22, 0xcd, 0x02,
+	0x0a, 0x0c, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x12, 0x0e,
+	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64, 0x12, 0x26,
+	0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x12, 0x2e, 0x43,
+	0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x2e, 0x4b, 0x69, 0x6e, 0x64,
+	0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x22, 0x0a, 0x03, 0x69, 0x6e, 0x74, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x49, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61,
+	0x69, 0x6e, 0x74, 0x56, 0x30, 0x52, 0x03, 0x69, 0x6e, 0x74, 0x12, 0x25, 0x0a, 0x03, 0x73, 0x74,
+	0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67,
+	0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x52, 0x03, 0x73, 0x74,
+	0x72, 0x12, 0x25, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x11, 0x2e, 0x44, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74,
+	0x56, 0x30, 0x52, 0x04, 0x64, 0x61, 0x74, 0x65, 0x12, 0x2b, 0x0a, 0x06, 0x73, 0x79, 0x6d, 0x62,
+	0x6f, 0x6c, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x53, 0x79, 0x6d, 0x62, 0x6f,
+	0x6c, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x52, 0x06, 0x73,
+	0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x12, 0x28, 0x0a, 0x05, 0x62, 0x79, 0x74, 0x65, 0x73, 0x18, 0x07,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x42, 0x79, 0x74, 0x65, 0x73, 0x43, 0x6f, 0x6e, 0x73,
+	0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x52, 0x05, 0x62, 0x79, 0x74, 0x65, 0x73, 0x22,
+	0x3c, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x07, 0x0a, 0x03, 0x49, 0x4e, 0x54, 0x10, 0x00,
+	0x12, 0x0a, 0x0a, 0x06, 0x53, 0x54, 0x52, 0x49, 0x4e, 0x47, 0x10, 0x01, 0x12, 0x08, 0x0a, 0x04,
+	0x44, 0x41, 0x54, 0x45, 0x10, 0x02, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x59, 0x4d, 0x42, 0x4f, 0x4c,
+	0x10, 0x03, 0x12, 0x09, 0x0a, 0x05, 0x42, 0x59, 0x54, 0x45, 0x53, 0x10, 0x04, 0x22, 0xf2, 0x02,
+	0x0a, 0x0f, 0x49, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56,
+	0x30, 0x12, 0x29, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32,
+	0x15, 0x2e, 0x49, 0x6e, 0x74, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56,
+	0x30, 0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x14, 0x0a, 0x05,
+	0x6c, 0x6f, 0x77, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x6f, 0x77,
+	0x65, 0x72, 0x12, 0x16, 0x0a, 0x06, 0x6c, 0x61, 0x72, 0x67, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x03, 0x52, 0x06, 0x6c, 0x61, 0x72, 0x67, 0x65, 0x72, 0x12, 0x24, 0x0a, 0x0e, 0x6c, 0x6f,
+	0x77, 0x65, 0x72, 0x5f, 0x6f, 0x72, 0x5f, 0x65, 0x71, 0x75, 0x61, 0x6c, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x03, 0x52, 0x0c, 0x6c, 0x6f, 0x77, 0x65, 0x72, 0x4f, 0x72, 0x45, 0x71, 0x75, 0x61, 0x6c,
+	0x12, 0x26, 0x0a, 0x0f, 0x6c, 0x61, 0x72, 0x67, 0x65, 0x72, 0x5f, 0x6f, 0x72, 0x5f, 0x65, 0x71,
+	0x75, 0x61, 0x6c, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0d, 0x6c, 0x61, 0x72, 0x67, 0x65,
+	0x72, 0x4f, 0x72, 0x45, 0x71, 0x75, 0x61, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x71, 0x75, 0x61,
+	0x6c, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x65, 0x71, 0x75, 0x61, 0x6c, 0x12, 0x19,
+	0x0a, 0x06, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x07, 0x20, 0x03, 0x28, 0x03, 0x42, 0x02,
+	0x10, 0x01, 0x52, 0x05, 0x69, 0x6e, 0x53, 0x65, 0x74, 0x12, 0x20, 0x0a, 0x0a, 0x6e, 0x6f, 0x74,
+	0x5f, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x08, 0x20, 0x03, 0x28, 0x03, 0x42, 0x02, 0x10,
+	0x01, 0x52, 0x08, 0x6e, 0x6f, 0x74, 0x49, 0x6e, 0x53, 0x65, 0x74, 0x22, 0x65, 0x0a, 0x04, 0x4b,
+	0x69, 0x6e, 0x64, 0x12, 0x09, 0x0a, 0x05, 0x4c, 0x4f, 0x57, 0x45, 0x52, 0x10, 0x00, 0x12, 0x0a,
+	0x0a, 0x06, 0x4c, 0x41, 0x52, 0x47, 0x45, 0x52, 0x10, 0x01, 0x12, 0x12, 0x0a, 0x0e, 0x4c, 0x4f,
+	0x57, 0x45, 0x52, 0x5f, 0x4f, 0x52, 0x5f, 0x45, 0x51, 0x55, 0x41, 0x4c, 0x10, 0x02, 0x12, 0x13,
+	0x0a, 0x0f, 0x4c, 0x41, 0x52, 0x47, 0x45, 0x52, 0x5f, 0x4f, 0x52, 0x5f, 0x45, 0x51, 0x55, 0x41,
+	0x4c, 0x10, 0x03, 0x12, 0x09, 0x0a, 0x05, 0x45, 0x51, 0x55, 0x41, 0x4c, 0x10, 0x04, 0x12, 0x06,
+	0x0a, 0x02, 0x49, 0x4e, 0x10, 0x05, 0x12, 0x0a, 0x0a, 0x06, 0x4e, 0x4f, 0x54, 0x5f, 0x49, 0x4e,
+	0x10, 0x06, 0x22, 0x9d, 0x02, 0x0a, 0x12, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x43, 0x6f, 0x6e,
+	0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x12, 0x2c, 0x0a, 0x04, 0x6b, 0x69, 0x6e,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x18, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67,
+	0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x2e, 0x4b, 0x69, 0x6e,
+	0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x70, 0x72, 0x65, 0x66, 0x69,
+	0x78, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x70, 0x72, 0x65, 0x66, 0x69, 0x78, 0x12,
+	0x16, 0x0a, 0x06, 0x73, 0x75, 0x66, 0x66, 0x69, 0x78, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x73, 0x75, 0x66, 0x66, 0x69, 0x78, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x71, 0x75, 0x61, 0x6c,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x71, 0x75, 0x61, 0x6c, 0x12, 0x15, 0x0a,
+	0x06, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x05, 0x20, 0x03, 0x28, 0x09, 0x52, 0x05, 0x69,
+	0x6e, 0x53, 0x65, 0x74, 0x12, 0x1c, 0x0a, 0x0a, 0x6e, 0x6f, 0x74, 0x5f, 0x69, 0x6e, 0x5f, 0x73,
+	0x65, 0x74, 0x18, 0x06, 0x20, 0x03, 0x28, 0x09, 0x52, 0x08, 0x6e, 0x6f, 0x74, 0x49, 0x6e, 0x53,
+	0x65, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x72, 0x65, 0x67, 0x65, 0x78, 0x18, 0x07, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x05, 0x72, 0x65, 0x67, 0x65, 0x78, 0x22, 0x48, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64,
+	0x12, 0x0a, 0x0a, 0x06, 0x50, 0x52, 0x45, 0x46, 0x49, 0x58, 0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06,
+	0x53, 0x55, 0x46, 0x46, 0x49, 0x58, 0x10, 0x01, 0x12, 0x09, 0x0a, 0x05, 0x45, 0x51, 0x55, 0x41,
+	0x4c, 0x10, 0x02, 0x12, 0x06, 0x0a, 0x02, 0x49, 0x4e, 0x10, 0x03, 0x12, 0x0a, 0x0a, 0x06, 0x4e,
+	0x4f, 0x54, 0x5f, 0x49, 0x4e, 0x10, 0x04, 0x12, 0x09, 0x0a, 0x05, 0x52, 0x45, 0x47, 0x45, 0x58,
+	0x10, 0x05, 0x22, 0x8b, 0x01, 0x0a, 0x10, 0x44, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74,
+	0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x12, 0x2a, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x16, 0x2e, 0x44, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x73,
+	0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b,
+	0x69, 0x6e, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x04, 0x52, 0x06, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x61,
+	0x66, 0x74, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x61, 0x66, 0x74, 0x65,
+	0x72, 0x22, 0x1d, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x0a, 0x0a, 0x06, 0x42, 0x45, 0x46,
+	0x4f, 0x52, 0x45, 0x10, 0x00, 0x12, 0x09, 0x0a, 0x05, 0x41, 0x46, 0x54, 0x45, 0x52, 0x10, 0x01,
+	0x22, 0x93, 0x01, 0x0a, 0x12, 0x53, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x43, 0x6f, 0x6e, 0x73, 0x74,
+	0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x12, 0x2c, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x18, 0x2e, 0x53, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x43, 0x6f,
+	0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52,
+	0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x15, 0x0a, 0x06, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18,
+	0x02, 0x20, 0x03, 0x28, 0x04, 0x52, 0x05, 0x69, 0x6e, 0x53, 0x65, 0x74, 0x12, 0x1c, 0x0a, 0x0a,
+	0x6e, 0x6f, 0x74, 0x5f, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x03, 0x20, 0x03, 0x28, 0x04,
+	0x52, 0x08, 0x6e, 0x6f, 0x74, 0x49, 0x6e, 0x53, 0x65, 0x74, 0x22, 0x1a, 0x0a, 0x04, 0x4b, 0x69,
+	0x6e, 0x64, 0x12, 0x06, 0x0a, 0x02, 0x49, 0x4e, 0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06, 0x4e, 0x4f,
+	0x54, 0x5f, 0x49, 0x4e, 0x10, 0x01, 0x22, 0xb2, 0x01, 0x0a, 0x11, 0x42, 0x79, 0x74, 0x65, 0x73,
+	0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x12, 0x2b, 0x0a, 0x04,
+	0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x17, 0x2e, 0x42, 0x79, 0x74,
+	0x65, 0x73, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x56, 0x30, 0x2e, 0x4b,
+	0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x71, 0x75,
+	0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x05, 0x65, 0x71, 0x75, 0x61, 0x6c, 0x12,
+	0x15, 0x0a, 0x06, 0x69, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0c, 0x52,
+	0x05, 0x69, 0x6e, 0x53, 0x65, 0x74, 0x12, 0x1c, 0x0a, 0x0a, 0x6e, 0x6f, 0x74, 0x5f, 0x69, 0x6e,
+	0x5f, 0x73, 0x65, 0x74, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0c, 0x52, 0x08, 0x6e, 0x6f, 0x74, 0x49,
+	0x6e, 0x53, 0x65, 0x74, 0x22, 0x25, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x09, 0x0a, 0x05,
+	0x45, 0x51, 0x55, 0x41, 0x4c, 0x10, 0x00, 0x12, 0x06, 0x0a, 0x02, 0x49, 0x4e, 0x10, 0x01, 0x12,
+	0x0a, 0x0a, 0x06, 0x4e, 0x4f, 0x54, 0x5f, 0x49, 0x4e, 0x10, 0x02, 0x22, 0x34, 0x0a, 0x06, 0x46,
+	0x61, 0x63, 0x74, 0x56, 0x31, 0x12, 0x2a, 0x0a, 0x09, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61,
+	0x74, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x50, 0x72, 0x65, 0x64, 0x69,
+	0x63, 0x61, 0x74, 0x65, 0x56, 0x31, 0x52, 0x09, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61, 0x74,
+	0x65, 0x22, 0x7d, 0x0a, 0x06, 0x52, 0x75, 0x6c, 0x65, 0x56, 0x31, 0x12, 0x20, 0x0a, 0x04, 0x68,
+	0x65, 0x61, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x50, 0x72, 0x65, 0x64,
+	0x69, 0x63, 0x61, 0x74, 0x65, 0x56, 0x31, 0x52, 0x04, 0x68, 0x65, 0x61, 0x64, 0x12, 0x20, 0x0a,
+	0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x50, 0x72,
+	0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x56, 0x31, 0x52, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x12,
+	0x2f, 0x0a, 0x0b, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x03,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f,
+	0x6e, 0x56, 0x31, 0x52, 0x0b, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73,
+	0x22, 0x2c, 0x0a, 0x07, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x56, 0x31, 0x12, 0x21, 0x0a, 0x07, 0x71,
+	0x75, 0x65, 0x72, 0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x07, 0x2e, 0x52,
+	0x75, 0x6c, 0x65, 0x56, 0x31, 0x52, 0x07, 0x71, 0x75, 0x65, 0x72, 0x69, 0x65, 0x73, 0x22, 0x3a,
+	0x0a, 0x0b, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x56, 0x31, 0x12, 0x12, 0x0a,
+	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x04, 0x6e, 0x61, 0x6d,
+	0x65, 0x12, 0x17, 0x0a, 0x03, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05,
+	0x2e, 0x49, 0x44, 0x56, 0x31, 0x52, 0x03, 0x69, 0x64, 0x73, 0x22, 0xd9, 0x01, 0x0a, 0x04, 0x49,
+	0x44, 0x56, 0x31, 0x12, 0x18, 0x0a, 0x06, 0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x04, 0x48, 0x00, 0x52, 0x06, 0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x12, 0x1c, 0x0a,
+	0x08, 0x76, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x48,
+	0x00, 0x52, 0x08, 0x76, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x1a, 0x0a, 0x07, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x48, 0x00, 0x52, 0x07,
+	0x69, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x12, 0x12, 0x0a, 0x03, 0x73, 0x74, 0x72, 0x18, 0x04,
+	0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x03, 0x73, 0x74, 0x72, 0x12, 0x14, 0x0a, 0x04, 0x64,
+	0x61, 0x74, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x04, 0x48, 0x00, 0x52, 0x04, 0x64, 0x61, 0x74,
+	0x65, 0x12, 0x16, 0x0a, 0x05, 0x62, 0x79, 0x74, 0x65, 0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0c,
+	0x48, 0x00, 0x52, 0x05, 0x62, 0x79, 0x74, 0x65, 0x73, 0x12, 0x14, 0x0a, 0x04, 0x62, 0x6f, 0x6f,
+	0x6c, 0x18, 0x07, 0x20, 0x01, 0x28, 0x08, 0x48, 0x00, 0x52, 0x04, 0x62, 0x6f, 0x6f, 0x6c, 0x12,
+	0x1a, 0x0a, 0x03, 0x73, 0x65, 0x74, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x06, 0x2e, 0x49,
+	0x44, 0x53, 0x65, 0x74, 0x48, 0x00, 0x52, 0x03, 0x73, 0x65, 0x74, 0x42, 0x09, 0x0a, 0x07, 0x43,
+	0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x22, 0x20, 0x0a, 0x05, 0x49, 0x44, 0x53, 0x65, 0x74, 0x12,
+	0x17, 0x0a, 0x03, 0x73, 0x65, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e, 0x49,
+	0x44, 0x56, 0x31, 0x52, 0x03, 0x73, 0x65, 0x74, 0x22, 0x25, 0x0a, 0x0c, 0x45, 0x78, 0x70, 0x72,
+	0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x31, 0x12, 0x15, 0x0a, 0x03, 0x6f, 0x70, 0x73, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x03, 0x2e, 0x4f, 0x70, 0x52, 0x03, 0x6f, 0x70, 0x73, 0x22,
+	0x75, 0x0a, 0x02, 0x4f, 0x70, 0x12, 0x1d, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x05, 0x2e, 0x49, 0x44, 0x56, 0x31, 0x48, 0x00, 0x52, 0x05, 0x76,
+	0x61, 0x6c, 0x75, 0x65, 0x12, 0x20, 0x0a, 0x05, 0x75, 0x6e, 0x61, 0x72, 0x79, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x08, 0x2e, 0x4f, 0x70, 0x55, 0x6e, 0x61, 0x72, 0x79, 0x48, 0x00, 0x52,
+	0x05, 0x75, 0x6e, 0x61, 0x72, 0x79, 0x12, 0x23, 0x0a, 0x06, 0x62, 0x69, 0x6e, 0x61, 0x72, 0x79,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x09, 0x2e, 0x4f, 0x70, 0x42, 0x69, 0x6e, 0x61, 0x72,
+	0x79, 0x48, 0x00, 0x52, 0x06, 0x62, 0x69, 0x6e, 0x61, 0x72, 0x79, 0x42, 0x09, 0x0a, 0x07, 0x43,
+	0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x22, 0x58, 0x0a, 0x07, 0x4f, 0x70, 0x55, 0x6e, 0x61, 0x72,
+	0x79, 0x12, 0x21, 0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32,
+	0x0d, 0x2e, 0x4f, 0x70, 0x55, 0x6e, 0x61, 0x72, 0x79, 0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04,
+	0x6b, 0x69, 0x6e, 0x64, 0x22, 0x2a, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x0a, 0x0a, 0x06,
+	0x4e, 0x65, 0x67, 0x61, 0x74, 0x65, 0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06, 0x50, 0x61, 0x72, 0x65,
+	0x6e, 0x73, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x4c, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x10, 0x02,
+	0x22, 0x89, 0x02, 0x0a, 0x08, 0x4f, 0x70, 0x42, 0x69, 0x6e, 0x61, 0x72, 0x79, 0x12, 0x22, 0x0a,
+	0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x0e, 0x2e, 0x4f, 0x70,
+	0x42, 0x69, 0x6e, 0x61, 0x72, 0x79, 0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e,
+	0x64, 0x22, 0xd8, 0x01, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x0c, 0x0a, 0x08, 0x4c, 0x65,
+	0x73, 0x73, 0x54, 0x68, 0x61, 0x6e, 0x10, 0x00, 0x12, 0x0f, 0x0a, 0x0b, 0x47, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x72, 0x54, 0x68, 0x61, 0x6e, 0x10, 0x01, 0x12, 0x0f, 0x0a, 0x0b, 0x4c, 0x65, 0x73,
+	0x73, 0x4f, 0x72, 0x45, 0x71, 0x75, 0x61, 0x6c, 0x10, 0x02, 0x12, 0x12, 0x0a, 0x0e, 0x47, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x72, 0x4f, 0x72, 0x45, 0x71, 0x75, 0x61, 0x6c, 0x10, 0x03, 0x12, 0x09,
+	0x0a, 0x05, 0x45, 0x71, 0x75, 0x61, 0x6c, 0x10, 0x04, 0x12, 0x0c, 0x0a, 0x08, 0x43, 0x6f, 0x6e,
+	0x74, 0x61, 0x69, 0x6e, 0x73, 0x10, 0x05, 0x12, 0x0a, 0x0a, 0x06, 0x50, 0x72, 0x65, 0x66, 0x69,
+	0x78, 0x10, 0x06, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x75, 0x66, 0x66, 0x69, 0x78, 0x10, 0x07, 0x12,
+	0x09, 0x0a, 0x05, 0x52, 0x65, 0x67, 0x65, 0x78, 0x10, 0x08, 0x12, 0x07, 0x0a, 0x03, 0x41, 0x64,
+	0x64, 0x10, 0x09, 0x12, 0x07, 0x0a, 0x03, 0x53, 0x75, 0x62, 0x10, 0x0a, 0x12, 0x07, 0x0a, 0x03,
+	0x4d, 0x75, 0x6c, 0x10, 0x0b, 0x12, 0x07, 0x0a, 0x03, 0x44, 0x69, 0x76, 0x10, 0x0c, 0x12, 0x07,
+	0x0a, 0x03, 0x41, 0x6e, 0x64, 0x10, 0x0d, 0x12, 0x06, 0x0a, 0x02, 0x4f, 0x72, 0x10, 0x0e, 0x12,
+	0x10, 0x0a, 0x0c, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x10,
+	0x0f, 0x12, 0x09, 0x0a, 0x05, 0x55, 0x6e, 0x69, 0x6f, 0x6e, 0x10, 0x10, 0x22, 0x6a, 0x0a, 0x06,
+	0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12, 0x21, 0x0a, 0x07, 0x71, 0x75, 0x65, 0x72, 0x69, 0x65,
+	0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x07, 0x2e, 0x52, 0x75, 0x6c, 0x65, 0x56, 0x31,
+	0x52, 0x07, 0x71, 0x75, 0x65, 0x72, 0x69, 0x65, 0x73, 0x12, 0x20, 0x0a, 0x04, 0x6b, 0x69, 0x6e,
+	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x0c, 0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79,
+	0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x22, 0x1b, 0x0a, 0x04, 0x4b,
+	0x69, 0x6e, 0x64, 0x12, 0x09, 0x0a, 0x05, 0x41, 0x6c, 0x6c, 0x6f, 0x77, 0x10, 0x00, 0x12, 0x08,
+	0x0a, 0x04, 0x44, 0x65, 0x6e, 0x79, 0x10, 0x01, 0x22, 0xcb, 0x01, 0x0a, 0x10, 0x56, 0x65, 0x72,
+	0x69, 0x66, 0x69, 0x65, 0x72, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x69, 0x65, 0x73, 0x12, 0x18, 0x0a,
+	0x07, 0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x07,
+	0x73, 0x79, 0x6d, 0x62, 0x6f, 0x6c, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69,
+	0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f,
+	0x6e, 0x12, 0x1d, 0x0a, 0x05, 0x66, 0x61, 0x63, 0x74, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x07, 0x2e, 0x46, 0x61, 0x63, 0x74, 0x56, 0x31, 0x52, 0x05, 0x66, 0x61, 0x63, 0x74, 0x73,
+	0x12, 0x1d, 0x0a, 0x05, 0x72, 0x75, 0x6c, 0x65, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x07, 0x2e, 0x52, 0x75, 0x6c, 0x65, 0x56, 0x31, 0x52, 0x05, 0x72, 0x75, 0x6c, 0x65, 0x73, 0x12,
+	0x20, 0x0a, 0x06, 0x63, 0x68, 0x65, 0x63, 0x6b, 0x73, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x08, 0x2e, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x56, 0x31, 0x52, 0x06, 0x63, 0x68, 0x65, 0x63, 0x6b,
+	0x73, 0x12, 0x23, 0x0a, 0x08, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x69, 0x65, 0x73, 0x18, 0x06, 0x20,
+	0x03, 0x28, 0x0b, 0x32, 0x07, 0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x52, 0x08, 0x70, 0x6f,
+	0x6c, 0x69, 0x63, 0x69, 0x65, 0x73, 0x42, 0x06, 0x5a, 0x04, 0x2e, 0x3b, 0x70, 0x62, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1651,60 +2759,98 @@ func file_biscuit_proto_rawDescGZIP() []byte {
 	return file_biscuit_proto_rawDescData
 }
 
-var file_biscuit_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
-var file_biscuit_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_biscuit_proto_enumTypes = make([]protoimpl.EnumInfo, 10)
+var file_biscuit_proto_msgTypes = make([]protoimpl.MessageInfo, 27)
 var file_biscuit_proto_goTypes = []interface{}{
-	(ID_Kind)(0),               // 0: ID.Kind
-	(Constraint_Kind)(0),       // 1: Constraint.Kind
-	(IntConstraint_Kind)(0),    // 2: IntConstraint.Kind
-	(StringConstraint_Kind)(0), // 3: StringConstraint.Kind
-	(DateConstraint_Kind)(0),   // 4: DateConstraint.Kind
-	(SymbolConstraint_Kind)(0), // 5: SymbolConstraint.Kind
-	(BytesConstraint_Kind)(0),  // 6: BytesConstraint.Kind
-	(*Biscuit)(nil),            // 7: Biscuit
-	(*SealedBiscuit)(nil),      // 8: SealedBiscuit
-	(*Signature)(nil),          // 9: Signature
-	(*Block)(nil),              // 10: Block
-	(*Fact)(nil),               // 11: Fact
-	(*Rule)(nil),               // 12: Rule
-	(*Caveat)(nil),             // 13: Caveat
-	(*Predicate)(nil),          // 14: Predicate
-	(*ID)(nil),                 // 15: ID
-	(*Constraint)(nil),         // 16: Constraint
-	(*IntConstraint)(nil),      // 17: IntConstraint
-	(*StringConstraint)(nil),   // 18: StringConstraint
-	(*DateConstraint)(nil),     // 19: DateConstraint
-	(*SymbolConstraint)(nil),   // 20: SymbolConstraint
-	(*BytesConstraint)(nil),    // 21: BytesConstraint
+	(IDV0_Kind)(0),               // 0: IDV0.Kind
+	(ConstraintV0_Kind)(0),       // 1: ConstraintV0.Kind
+	(IntConstraintV0_Kind)(0),    // 2: IntConstraintV0.Kind
+	(StringConstraintV0_Kind)(0), // 3: StringConstraintV0.Kind
+	(DateConstraintV0_Kind)(0),   // 4: DateConstraintV0.Kind
+	(SymbolConstraintV0_Kind)(0), // 5: SymbolConstraintV0.Kind
+	(BytesConstraintV0_Kind)(0),  // 6: BytesConstraintV0.Kind
+	(OpUnary_Kind)(0),            // 7: OpUnary.Kind
+	(OpBinary_Kind)(0),           // 8: OpBinary.Kind
+	(Policy_Kind)(0),             // 9: Policy.Kind
+	(*Biscuit)(nil),              // 10: Biscuit
+	(*SealedBiscuit)(nil),        // 11: SealedBiscuit
+	(*Signature)(nil),            // 12: Signature
+	(*Block)(nil),                // 13: Block
+	(*FactV0)(nil),               // 14: FactV0
+	(*RuleV0)(nil),               // 15: RuleV0
+	(*CaveatV0)(nil),             // 16: CaveatV0
+	(*PredicateV0)(nil),          // 17: PredicateV0
+	(*IDV0)(nil),                 // 18: IDV0
+	(*ConstraintV0)(nil),         // 19: ConstraintV0
+	(*IntConstraintV0)(nil),      // 20: IntConstraintV0
+	(*StringConstraintV0)(nil),   // 21: StringConstraintV0
+	(*DateConstraintV0)(nil),     // 22: DateConstraintV0
+	(*SymbolConstraintV0)(nil),   // 23: SymbolConstraintV0
+	(*BytesConstraintV0)(nil),    // 24: BytesConstraintV0
+	(*FactV1)(nil),               // 25: FactV1
+	(*RuleV1)(nil),               // 26: RuleV1
+	(*CheckV1)(nil),              // 27: CheckV1
+	(*PredicateV1)(nil),          // 28: PredicateV1
+	(*IDV1)(nil),                 // 29: IDV1
+	(*IDSet)(nil),                // 30: IDSet
+	(*ExpressionV1)(nil),         // 31: ExpressionV1
+	(*Op)(nil),                   // 32: Op
+	(*OpUnary)(nil),              // 33: OpUnary
+	(*OpBinary)(nil),             // 34: OpBinary
+	(*Policy)(nil),               // 35: Policy
+	(*VerifierPolicies)(nil),     // 36: VerifierPolicies
 }
 var file_biscuit_proto_depIdxs = []int32{
-	9,  // 0: Biscuit.signature:type_name -> Signature
-	11, // 1: Block.facts:type_name -> Fact
-	12, // 2: Block.rules:type_name -> Rule
-	13, // 3: Block.caveats:type_name -> Caveat
-	14, // 4: Fact.predicate:type_name -> Predicate
-	14, // 5: Rule.head:type_name -> Predicate
-	14, // 6: Rule.body:type_name -> Predicate
-	16, // 7: Rule.constraints:type_name -> Constraint
-	12, // 8: Caveat.queries:type_name -> Rule
-	15, // 9: Predicate.ids:type_name -> ID
-	0,  // 10: ID.kind:type_name -> ID.Kind
-	1,  // 11: Constraint.kind:type_name -> Constraint.Kind
-	17, // 12: Constraint.int:type_name -> IntConstraint
-	18, // 13: Constraint.str:type_name -> StringConstraint
-	19, // 14: Constraint.date:type_name -> DateConstraint
-	20, // 15: Constraint.symbol:type_name -> SymbolConstraint
-	21, // 16: Constraint.bytes:type_name -> BytesConstraint
-	2,  // 17: IntConstraint.kind:type_name -> IntConstraint.Kind
-	3,  // 18: StringConstraint.kind:type_name -> StringConstraint.Kind
-	4,  // 19: DateConstraint.kind:type_name -> DateConstraint.Kind
-	5,  // 20: SymbolConstraint.kind:type_name -> SymbolConstraint.Kind
-	6,  // 21: BytesConstraint.kind:type_name -> BytesConstraint.Kind
-	22, // [22:22] is the sub-list for method output_type
-	22, // [22:22] is the sub-list for method input_type
-	22, // [22:22] is the sub-list for extension type_name
-	22, // [22:22] is the sub-list for extension extendee
-	0,  // [0:22] is the sub-list for field type_name
+	12, // 0: Biscuit.signature:type_name -> Signature
+	14, // 1: Block.facts_v0:type_name -> FactV0
+	15, // 2: Block.rules_v0:type_name -> RuleV0
+	16, // 3: Block.caveats_v0:type_name -> CaveatV0
+	25, // 4: Block.facts_v1:type_name -> FactV1
+	26, // 5: Block.rules_v1:type_name -> RuleV1
+	27, // 6: Block.checks_v1:type_name -> CheckV1
+	17, // 7: FactV0.predicate:type_name -> PredicateV0
+	17, // 8: RuleV0.head:type_name -> PredicateV0
+	17, // 9: RuleV0.body:type_name -> PredicateV0
+	19, // 10: RuleV0.constraints:type_name -> ConstraintV0
+	15, // 11: CaveatV0.queries:type_name -> RuleV0
+	18, // 12: PredicateV0.ids:type_name -> IDV0
+	0,  // 13: IDV0.kind:type_name -> IDV0.Kind
+	1,  // 14: ConstraintV0.kind:type_name -> ConstraintV0.Kind
+	20, // 15: ConstraintV0.int:type_name -> IntConstraintV0
+	21, // 16: ConstraintV0.str:type_name -> StringConstraintV0
+	22, // 17: ConstraintV0.date:type_name -> DateConstraintV0
+	23, // 18: ConstraintV0.symbol:type_name -> SymbolConstraintV0
+	24, // 19: ConstraintV0.bytes:type_name -> BytesConstraintV0
+	2,  // 20: IntConstraintV0.kind:type_name -> IntConstraintV0.Kind
+	3,  // 21: StringConstraintV0.kind:type_name -> StringConstraintV0.Kind
+	4,  // 22: DateConstraintV0.kind:type_name -> DateConstraintV0.Kind
+	5,  // 23: SymbolConstraintV0.kind:type_name -> SymbolConstraintV0.Kind
+	6,  // 24: BytesConstraintV0.kind:type_name -> BytesConstraintV0.Kind
+	28, // 25: FactV1.predicate:type_name -> PredicateV1
+	28, // 26: RuleV1.head:type_name -> PredicateV1
+	28, // 27: RuleV1.body:type_name -> PredicateV1
+	31, // 28: RuleV1.expressions:type_name -> ExpressionV1
+	26, // 29: CheckV1.queries:type_name -> RuleV1
+	29, // 30: PredicateV1.ids:type_name -> IDV1
+	30, // 31: IDV1.set:type_name -> IDSet
+	29, // 32: IDSet.set:type_name -> IDV1
+	32, // 33: ExpressionV1.ops:type_name -> Op
+	29, // 34: Op.value:type_name -> IDV1
+	33, // 35: Op.unary:type_name -> OpUnary
+	34, // 36: Op.binary:type_name -> OpBinary
+	7,  // 37: OpUnary.kind:type_name -> OpUnary.Kind
+	8,  // 38: OpBinary.kind:type_name -> OpBinary.Kind
+	26, // 39: Policy.queries:type_name -> RuleV1
+	9,  // 40: Policy.kind:type_name -> Policy.Kind
+	25, // 41: VerifierPolicies.facts:type_name -> FactV1
+	26, // 42: VerifierPolicies.rules:type_name -> RuleV1
+	27, // 43: VerifierPolicies.checks:type_name -> CheckV1
+	35, // 44: VerifierPolicies.policies:type_name -> Policy
+	45, // [45:45] is the sub-list for method output_type
+	45, // [45:45] is the sub-list for method input_type
+	45, // [45:45] is the sub-list for extension type_name
+	45, // [45:45] is the sub-list for extension extendee
+	0,  // [0:45] is the sub-list for field type_name
 }
 
 func init() { file_biscuit_proto_init() }
@@ -1762,7 +2908,7 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Fact); i {
+			switch v := v.(*FactV0); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1774,7 +2920,7 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Rule); i {
+			switch v := v.(*RuleV0); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1786,7 +2932,7 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Caveat); i {
+			switch v := v.(*CaveatV0); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1798,7 +2944,7 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Predicate); i {
+			switch v := v.(*PredicateV0); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1810,7 +2956,7 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ID); i {
+			switch v := v.(*IDV0); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1822,7 +2968,7 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Constraint); i {
+			switch v := v.(*ConstraintV0); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1834,7 +2980,7 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IntConstraint); i {
+			switch v := v.(*IntConstraintV0); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1846,7 +2992,7 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StringConstraint); i {
+			switch v := v.(*StringConstraintV0); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1858,7 +3004,7 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DateConstraint); i {
+			switch v := v.(*DateConstraintV0); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1870,7 +3016,7 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SymbolConstraint); i {
+			switch v := v.(*SymbolConstraintV0); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1882,7 +3028,151 @@ func file_biscuit_proto_init() {
 			}
 		}
 		file_biscuit_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BytesConstraint); i {
+			switch v := v.(*BytesConstraintV0); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*FactV1); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RuleV1); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CheckV1); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PredicateV1); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*IDV1); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*IDSet); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExpressionV1); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Op); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*OpUnary); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*OpBinary); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Policy); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_biscuit_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*VerifierPolicies); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1894,13 +3184,28 @@ func file_biscuit_proto_init() {
 			}
 		}
 	}
+	file_biscuit_proto_msgTypes[19].OneofWrappers = []interface{}{
+		(*IDV1_Symbol)(nil),
+		(*IDV1_Variable)(nil),
+		(*IDV1_Integer)(nil),
+		(*IDV1_Str)(nil),
+		(*IDV1_Date)(nil),
+		(*IDV1_Bytes)(nil),
+		(*IDV1_Bool)(nil),
+		(*IDV1_Set)(nil),
+	}
+	file_biscuit_proto_msgTypes[22].OneofWrappers = []interface{}{
+		(*Op_Value)(nil),
+		(*Op_Unary)(nil),
+		(*Op_Binary)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_biscuit_proto_rawDesc,
-			NumEnums:      7,
-			NumMessages:   15,
+			NumEnums:      10,
+			NumMessages:   27,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

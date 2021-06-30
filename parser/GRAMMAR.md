@@ -4,7 +4,7 @@ This document describes the currently supported Datalog grammar.
 
 ## Term
 
-Represents a Datalog type, can be one of: symbol, variable, integer, string, date, bytes, or set.
+Represents a Datalog type, can be one of: symbol, variable, integer, string, date, bytes, boolean, or set.
 
 - symbol is prefixed with a `#` sign followed by text, e.g. `#read`
 - variable is prefixed with a `$` sign followed by a string or an unsigned 32bit base-10 integer,  e.g. `$0` or `$variable1`
@@ -12,6 +12,7 @@ Represents a Datalog type, can be one of: symbol, variable, integer, string, dat
 - string is any utf8 character sequence, between double quotes, e.g. `"/path/to/file.txt"`
 - date is RFC3339 encoded, e.g. `2006-01-02T15:04:05Z07:00`
 - bytes is an hexadecimal encoded string, prefixed with a `hex:` sequence
+- boolean is either `true` or `false`
 - set is a sequence of any of the above types, except variable, between brackets, e.g. `[#read, #write, #update, "file1", "file2"]`
 
 ## Predicate
@@ -22,7 +23,7 @@ A predicate is a list of terms, grouped under a name in the form `Name(Term0, Te
 
 Constraints allows performing checks on a variable, below is the list of available operations by type and their expected format.
 
-### Integer:
+### Integer
 
 - Equal: `$i == 1`
 - Greater than: `$i > 1`
@@ -75,6 +76,6 @@ It has the format: `Head <- Body @ Constraints`.
 
 e.g. `right(#authority, $file, #read) <- resource(#ambient, $file), owner(#ambient, $user, $file) @ $user == "username", prefix($file, "/home/username")`
 
-# Caveat
+# Check
 
-A caveat is a list of rules with the format: `[ rule0 || rule1 || ... || ruleN ]`
+A check is a list of rules with the format: `[ rule0 || rule1 || ... || ruleN ]`

@@ -90,12 +90,14 @@ if err != nil {
 verifier.AddFact(biscuit.Fact{Predicate: biscuit.Predicate{
     Name: "resource", 
     IDs: []biscuit.Term{
-        biscuit.Symbol("ambient"), 
+        biscuit.SymbolAmbient, 
         biscuit.String("/a/file1.txt")
     }
 }})
 
 // ... add more ambient facts, rules, caveats...
+
+verifier.AddPolicy(biscuit.DefaultAllowPolicy)
 
 if err := verifier.Verify(); err != nil {
     fmt.Printf("failed to verify token: %v\n", err)
